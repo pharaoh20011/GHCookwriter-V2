@@ -1,0 +1,17 @@
+{
+  "name": "ghcook2",
+  "version": "1.0.0",
+  "description": "GHCookwriter Landing Page Modernized with Tailwind CSS and Vanilla JS",
+  "main": "assets/js/main.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --watch",
+    "optimize-images": "node optimize-images.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
