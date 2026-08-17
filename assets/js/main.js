@@ -413,6 +413,9 @@ function handleFormSubmit(event) {
   fetch(form.action, {
     method: 'POST',
     body: formData,
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest'
+    }
   })
     .then((response) => {
       form.reset();
