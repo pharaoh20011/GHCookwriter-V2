@@ -25,8 +25,8 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit("Invalid email format.");
 }
 
-// MUST be a real email created inside cPanel
-$to = "info@ghcookwriter.com";
+// Destination email address where form submissions are delivered
+$to = "writer.gcook68@gmail.com";
 
 $email_subject = "New Website Message: $subject";
 
