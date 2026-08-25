@@ -26,7 +26,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // Destination email address where form submissions are delivered
-$to = "writer.gcook68@gmail.com";
+$to = "info@ghcookwriter.com";
 
 $email_subject = "New Website Message: $subject";
 
