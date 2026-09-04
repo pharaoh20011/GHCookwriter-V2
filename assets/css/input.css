@@ -2,32 +2,76 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+:root {
+  /* Encounter Brand Tokens */
+  --header-height: 80px;
+  --color-encounter-blue: #1C63FB;
+  --color-encounter-blue-hover: #0B4ED8;
+  --color-encounter-navy: #071426;
+  --color-midnight: #020817;
+  --color-paper: #F8F7F4;
+  --color-pure-white: #FFFFFF;
+  --color-ink: #172033;
+  --color-slate: #596579;
+  --color-hairline: #D9DEE7;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height, 80px);
   }
   
   body {
-    background-color: #ffffff;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
     font-family: 'Roboto', sans-serif;
   }
 
-  body:not(.thank-you-page) {
-    background-image: url('../images/polygon.webp');
-    background-position: -500px -1585px;
-    background-repeat: no-repeat;
+  /* Accessible visible focus states (WCAG 2.2 AA) */
+  *:focus-visible {
+    outline: 2px solid var(--color-encounter-blue);
+    outline-offset: 3px;
   }
 
-  /* Accessible visible focus states */
-  *:focus-visible {
-    outline: 2px solid #1C63FB;
-    outline-offset: 2px;
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
 @layer utilities {
-  .serif-font {
+  .font-garamond {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-oswald {
     font-family: 'Oswald', sans-serif;
+  }
+
+  .font-roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .editorial-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 0.8125rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-encounter-blue);
+  }
+
+  .book-shadow {
+    box-shadow: 0 20px 45px -10px rgba(7, 20, 38, 0.4), 0 10px 20px -8px rgba(0, 0, 0, 0.3);
+  }
+
+  .hairline-border {
+    border-color: var(--color-hairline);
   }
   
   .glass {
@@ -38,10 +82,10 @@
   }
 
   .glass-dark {
-    background: rgba(15, 23, 42, 0.6);
+    background: rgba(7, 20, 38, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(217, 222, 231, 0.12);
   }
 
   /* 3D Carousel Viewport and Track */
@@ -109,58 +153,41 @@
 
   /* Header scrolled transitions */
   .js-sticky-header {
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, padding 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   }
   
-  /* 1. Logo image filters: white at top, black on scroll */
   .js-sticky-header .logo-link img {
     filter: brightness(0) invert(1);
-    transition: filter 0.3s ease;
+    transition: transform 0.3s ease;
   }
   
-  .js-sticky-header.header-scrolled .logo-link img {
-    filter: brightness(0); /* changes white image to black */
-  }
-  
-  /* 2. Logo text color: white at top, black on scroll */
   .js-sticky-header .logo-text {
-    color: #ffffff !important;
-    transition: color 0.3s ease;
+    color: #ffffff;
   }
   
-  .js-sticky-header.header-scrolled .logo-text {
-    color: #0f172a !important; /* text-slate-900 */
-  }
-  
-  .thank-you-page .js-sticky-header.header-scrolled .logo-text span {
-    color: #0f172a !important;
-  }
-  
-  /* 3. Navigation links: white at top, black on scroll */
   .js-sticky-header nav ul li a {
-    color: rgba(255, 255, 255, 0.8) !important;
-    transition: color 0.3s ease;
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.2s ease, border-color 0.2s ease;
   }
   
   .js-sticky-header nav ul li a:hover {
-    color: #ffffff !important;
+    color: #ffffff;
   }
-  
+
   .js-sticky-header.header-scrolled nav ul li a {
-    color: rgba(15, 23, 42, 0.7) !important; /* text-slate-900/70 */
+    color: rgba(255, 255, 255, 0.85);
   }
-  
+
   .js-sticky-header.header-scrolled nav ul li a:hover {
-    color: #0f172a !important; /* text-slate-900 */
+    color: var(--color-encounter-blue);
   }
   
-  /* 4. Mobile hamburger toggle color */
   .js-sticky-header .site-menu-toggle {
-    color: #ffffff !important;
-    transition: color 0.3s ease;
+    color: #ffffff;
+    transition: color 0.2s ease;
   }
   
-  .js-sticky-header.header-scrolled .site-menu-toggle {
-    color: #0f172a !important;
+  .js-sticky-header .site-menu-toggle:hover {
+    color: var(--color-encounter-blue);
   }
 }

@@ -31,7 +31,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Oswald:wght@300;400;500;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet" />
 
     <!-- Tailwind compiled stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -127,18 +127,23 @@
     <div class="relative min-h-screen flex flex-col">
       
       <!-- MOBILE MENU DRAWER (HIDDEN BY DEFAULT) -->
-      <div class="site-mobile-menu fixed top-0 right-0 h-full w-[300px] bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-slate-100" aria-hidden="true">
-        <div class="flex items-center justify-between p-6 border-b border-slate-100">
-          <span class="font-oswald text-xl font-bold tracking-wider text-slate-900">NAVIGATION</span>
-          <button class="js-menu-toggle p-2 text-slate-500 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary rounded-full transition-colors" aria-label="Close mobile menu">
+      <div class="site-mobile-menu fixed top-0 right-0 h-full w-[320px] bg-navy border-l border-white/10 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col" aria-hidden="true">
+        <div class="flex items-center justify-between p-6 border-b border-white/10">
+          <span class="font-oswald text-lg font-medium tracking-widest text-white uppercase">NAVIGATION</span>
+          <button class="js-menu-toggle p-2 text-slate-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary rounded-lg transition-colors" aria-label="Close mobile menu">
             <!-- Close SVG Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
-        <div class="site-mobile-menu-body py-4 flex flex-col">
+        <div class="site-mobile-menu-body py-4 flex flex-col flex-grow overflow-y-auto">
           <!-- Dynamically filled by JS -->
+        </div>
+        <div class="p-6 border-t border-white/10">
+          <a href="#screenshots-section" class="block w-full text-center py-3.5 bg-primary hover:bg-primary-hover text-white font-oswald text-sm tracking-wider uppercase rounded transition-colors">
+            EXPLORE THE BOOKS
+          </a>
         </div>
       </div>
 
@@ -149,37 +154,45 @@
             
             <!-- Logo Section -->
             <div class="flex items-center gap-3">
-              <a href="index.html" class="logo-link focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg transition-all" aria-label="GHCookwriter Home">
+              <a href="index.html" class="logo-link focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-navy rounded-lg transition-all flex items-center gap-3" aria-label="GHCookwriter Home">
                 <img
                   src="assets/images/site_icon.webp"
-                  alt="GHCOOK Writer logo featuring stylized book with feather quill and sparkles, representing The Encounter Trilogy"
-                  class="h-12 w-auto object-contain hover:scale-105 transition-transform"
+                  alt="GHCOOK Writer logo featuring stylized book with feather quill and sparkles"
+                  class="h-10 w-auto object-contain hover:scale-105 transition-transform"
                 />
+                <span class="logo-text font-oswald text-xl md:text-2xl font-light text-white tracking-widest uppercase">
+                  GHCOOK<span class="font-bold text-primary">writer</span>
+                </span>
               </a>
-              <span class="logo-text font-oswald text-xl md:text-2xl font-light text-white tracking-widest">
-                GHCOOK<span class="font-bold text-primary">writer</span>
-              </span>
             </div>
 
             <!-- Navigation Links -->
             <nav class="hidden lg:block" role="navigation" aria-label="Main Navigation">
-              <ul class="flex items-center gap-8 js-clone-nav">
-                <li><a href="#home-section" class="text-white/80 hover:text-white font-medium text-sm tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">Home</a></li>
-                <li><a href="#screenshots-section" class="text-white/80 hover:text-white font-medium text-sm tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">Screenshots</a></li>
-                <li><a href="#about-section" class="text-white/80 hover:text-white font-medium text-sm tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">About Author</a></li>
-                <li><a href="#testimonial-section" class="text-white/80 hover:text-white font-medium text-sm tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">Testimonials</a></li>
-                <li><a href="#contact-section" class="text-white/80 hover:text-white font-medium text-sm tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">Contact</a></li>
+              <ul class="flex items-center gap-7 js-clone-nav">
+                <li><a href="#home-section" class="text-white/85 hover:text-white font-oswald font-medium text-xs tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">Home</a></li>
+                <li><a href="#books-section" class="text-white/85 hover:text-white font-oswald font-medium text-xs tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">Books</a></li>
+                <li><a href="#excerpts-section" class="text-white/85 hover:text-white font-oswald font-medium text-xs tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">Inside Story</a></li>
+                <li><a href="#characters-section" class="text-white/85 hover:text-white font-oswald font-medium text-xs tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">Ensemble</a></li>
+                <li><a href="#about-section" class="text-white/85 hover:text-white font-oswald font-medium text-xs tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">About George</a></li>
+                <li><a href="#testimonial-section" class="text-white/85 hover:text-white font-oswald font-medium text-xs tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">Reviews</a></li>
+                <li><a href="#audio-section" class="text-white/85 hover:text-white font-oswald font-medium text-xs tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">Audio</a></li>
+                <li><a href="#contact-section" class="text-white/85 hover:text-white font-oswald font-medium text-xs tracking-widest uppercase transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary">Contact</a></li>
               </ul>
             </nav>
 
-            <!-- Mobile Menu Toggle Button -->
-            <div class="lg:hidden">
-              <a href="#" class="site-menu-toggle js-menu-toggle p-2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg inline-flex items-center justify-center" aria-label="Toggle navigation" aria-expanded="false">
-                <!-- Hamburger SVG Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+            <!-- Header CTA & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+              <a href="#screenshots-section" class="hidden sm:inline-block px-5 py-2.5 bg-primary hover:bg-primary-hover text-white font-oswald text-xs font-medium tracking-widest uppercase rounded transition-all duration-200 hover:-translate-y-0.5 shadow-md">
+                EXPLORE THE BOOKS
               </a>
+              <div class="lg:hidden">
+                <a href="#" class="site-menu-toggle js-menu-toggle p-2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg inline-flex items-center justify-center" aria-label="Toggle navigation" aria-expanded="false">
+                  <!-- Hamburger SVG Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </a>
+              </div>
             </div>
 
           </div>
@@ -189,171 +202,386 @@
       <!-- MAIN CONTENT -->
       <main id="main-content" class="flex-grow">
         
-        <!-- HERO SECTION -->
-        <section id="home-section" class="relative bg-slate-950 pt-32 pb-24 lg:py-48 px-6 overflow-hidden flex items-center min-h-[90vh]">
-          <!-- Decorative Dark Glass Overlay -->
-          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-slate-950 opacity-90 z-0"></div>
-          <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl"></div>
+        <!-- HERO PRESENTATION -->
+        <section id="home-section" class="relative bg-navy overflow-hidden pt-28 pb-12 sm:pb-16 lg:pt-36 lg:pb-24 border-b border-white/10 scroll-mt-20 sm:scroll-mt-24">
+          <!-- Atmospheric Backdrop Gradient & Subtle Lighting -->
+          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-navy via-midnight to-midnight opacity-95 z-0 pointer-events-none"></div>
+          <div class="absolute -top-24 -right-24 w-[500px] h-[500px] bg-primary/10 rounded-full filter blur-3xl pointer-events-none"></div>
           
           <div class="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-16">
-            <div class="lg:col-span-6 flex flex-col items-start text-left">
-              <span class="inline-block px-4 py-1.5 rounded-full bg-primary/15 border border-primary/30 text-primary text-xs font-bold tracking-widest uppercase mb-6">NOW AVAILABLE</span>
-              <h1 class="text-white font-oswald text-4xl sm:text-5xl lg:text-6xl font-bold tracking-wide uppercase leading-tight mb-6">
-                Meet Your Next Books
+            
+            <!-- Hero Text Column -->
+            <div class="lg:col-span-7 flex flex-col items-start text-left">
+              <span class="editorial-label text-primary font-oswald text-xs sm:text-sm tracking-[0.2em] font-medium uppercase mb-4 flex items-center gap-2">
+                <span class="inline-block w-6 h-[1px] bg-primary/60"></span>
+                01 — THE ENCOUNTER TRILOGY
+              </span>
+              
+              <h1 class="text-white font-oswald text-4xl sm:text-5xl lg:text-6xl font-bold tracking-wide uppercase leading-[1.08] mb-4">
+                Every Encounter <br class="hidden sm:inline" /><span class="text-white">Changes Everything.</span>
               </h1>
-              
-              <div class="h-1 w-20 bg-primary mb-8 rounded-full"></div>
 
-              <p class="text-slate-300 text-lg leading-relaxed mb-8 max-w-xl font-light">
-                <strong class="font-bold text-white block mb-2 text-xl">A Chance Encounter, A Random Encounter &amp; A Social Encounter</strong>
-                Set in the heart of Kansas City, where ambition, romance, and redemption collide. Each book explores the power of connection, whether by fate, accident, or design; and the choices that shape their lives. Love, ambition, and loyalty collide in a city where every encounter could change everything.
+              <p class="font-garamond italic text-xl sm:text-2xl text-slate-200 mb-6 font-normal">
+                A Chance Encounter &bull; A Random Encounter &bull; A Social Encounter
               </p>
               
-              <p class="text-slate-400 italic text-sm mb-8 border-l-2 border-slate-700 pl-4">
-                <a href="#cta-section" class="hover:text-primary transition-colors focus:underline">
-                  A Random Encounter (Available Now for pre-orders). See below for more information.
-                </a>
-              </p>
+              <div class="h-0.5 w-16 bg-primary mb-6"></div>
 
+              <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-8 max-w-xl font-light font-roboto">
+                Set in the heart of Kansas City, where ambition, romance, and redemption collide. Step into George H. Cook's compelling story of choices, fate, and connection that reshape every character's destiny.
+              </p>
+              
               <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
                 <a
-                  href="https://a.co/d/06Zc0p9u"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="px-8 py-4 bg-primary hover:bg-primary-hover text-white text-center font-bold tracking-wider rounded-full shadow-lg hover:shadow-primary/30 hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950"
+                  href="#screenshots-section"
+                  class="px-7 py-3.5 bg-primary hover:bg-primary-hover text-white text-center font-oswald text-sm font-medium tracking-wider uppercase rounded shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-navy"
                 >
-                  Buy On Amazon
+                  EXPLORE THE TRILOGY &rarr;
                 </a>
                 <a
-                  href="https://www.barnesandnoble.com/w/a-chance-encounter-george-h-cook/1150437160?ean=9798260374962"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="px-8 py-4 bg-primary hover:bg-primary-hover text-white text-center font-bold tracking-wider rounded-full shadow-lg hover:shadow-primary/30 hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950"
+                  href="#about-section"
+                  class="px-7 py-3.5 bg-transparent hover:bg-white/5 text-white text-center font-oswald text-sm font-medium tracking-wider uppercase rounded border border-hairline/40 hover:border-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-navy"
                 >
-                  Buy on Barnes &amp; Noble
+                  MEET THE AUTHOR
                 </a>
               </div>
             </div>
 
-            <!-- Hero Image Wrapper -->
-            <div class="lg:col-span-6 flex justify-center w-full">
-              <div class="relative w-full max-w-[550px] group">
-                <div class="absolute inset-0 bg-primary/20 rounded-3xl filter blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+            <!-- Hero Physical Book Presentation -->
+            <div class="lg:col-span-5 flex justify-center w-full">
+              <div class="relative w-full max-w-[480px] group">
+                <div class="absolute -inset-4 bg-primary/10 rounded-3xl filter blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
                 <img
                   src="assets/images/books_1_2_3_new.webp"
-                  class="relative w-full h-auto object-contain drop-shadow-2xl rounded-2xl group-hover:scale-[1.01] transition-transform duration-500"
-                  alt="Three book covers side by side for The Encounter Trilogy: A Chance Encounter, A Random Encounter, and A Social Encounter by George H Cook"
-                  priority="true"
+                  class="relative w-full h-auto object-contain book-shadow rounded-xl transition-transform duration-500 group-hover:scale-[1.01]"
+                  alt="The Encounter Trilogy book covers: A Chance Encounter, A Random Encounter, and A Social Encounter by George H. Cook"
+                  fetchpriority="high"
+                  width="550"
+                  height="360"
                 />
               </div>
             </div>
+
           </div>
         </section>
 
-        <!-- BOOK SCREENSHOTS SECTION -->
-        <section id="screenshots-section" class="py-24 px-6 bg-slate-50 border-y border-slate-200/50">
+        <!-- THE ENCOUNTER TRILOGY / BOOKS SECTION -->
+        <section id="books-section" class="py-14 sm:py-20 lg:py-24 px-6 bg-paper border-y border-hairline/60 relative">
+          <div id="screenshots-section"></div>
+          
           <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-12">
-              <div class="lg:col-span-6">
-                <span class="text-primary font-bold text-xs tracking-widest uppercase mb-3 block">PREVIEW THE EXPERIENCE</span>
-                <h2 class="text-slate-900 font-oswald text-3xl sm:text-4xl font-bold tracking-wider uppercase mb-6">
-                  Book Screenshots
-                </h2>
-                <div class="h-1 w-16 bg-primary mb-6"></div>
-                <p class="text-slate-600 font-light leading-relaxed mb-4">
-                  <strong>The Encounter Trilogy:<br> A Chance Encounter, A Random Encounter &amp; A Social Encounter.</strong><br>Step into the drama before reading a single page. From high-stakes boardrooms to intimate, life-changing moments, explore visual previews and key excerpts that bring the characters and story of Kansas City to life. 
-                  Experience the tension, passion, and rivalry firsthand. Take a sneak peek at pivotal chapters and see where the journey of Greg, Carry, and Veronica begins.
-                </p>
-                <p class="text-slate-600 font-light leading-relaxed mb-6">
-                Subscribe below and get the latest updates on<br><strong>Book 3 of the Trilogy: A Social Encounter.</strong> 
-                </p>
-
-                <!-- Custom Slider Controls -->
-                <div class="flex items-center gap-4 mb-4 text-slate-800 font-bold tracking-wider text-sm">
-                  <a href="#" class="customPrevBtn px-3 py-1.5 hover:text-primary transition-colors focus:ring-2 focus:ring-primary rounded-md" aria-label="Previous screenshot">Prev</a>
-                  <span class="text-slate-300" aria-hidden="true">/</span>
-                  <a href="#" class="customNextBtn px-3 py-1.5 hover:text-primary transition-colors focus:ring-2 focus:ring-primary rounded-md" aria-label="Next screenshot">Next</a>
-                </div>
-              </div>
-
-              <!-- Slider Carousel Wrapper -->
-              <div class="lg:col-span-6 w-full">
-                <div class="owl-carousel slide-one-item flex items-center justify-center bg-slate-900 relative">
-                  <img
-                    src="assets/images/screenshots/shot1.webp"
-                    alt="Interior book page screenshot from A Chance Encounter showing characters Greg and Carry in a tense conversation at a Kansas City restaurant"
-                  />
-                  <img
-                    src="assets/images/screenshots/shot2.webp"
-                    alt="Book page screenshot from A Chance Encounter depicting a romantic evening scene at Club Euchre with the main characters"
-                  />
-                  <img
-                    src="assets/images/screenshots/shot3.webp"
-                    alt="Screenshot of a dramatic moment from A Chance Encounter showing Veronica confronting Greg about his drinking in an office setting"
-                  />
-                  <img
-                    src="assets/images/screenshots/shot4.webp"
-                    alt="Book excerpt from A Chance Encounter featuring a hospital scene with characters Tessa, Erica, and Greg having an emotional discussion"
-                  />
-                  <img
-                    src="assets/images/screenshots/shot5.webp"
-                    alt="Page screenshot from A Chance Encounter showing the Kansas City skyline description and a pivotal moment between the three main characters Greg, David, and Darren"
-                  />
-                </div>
-              </div>
+            <!-- Section Editorial Header -->
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14 lg:mb-16">
+              <span class="editorial-label text-primary font-oswald text-xs sm:text-sm tracking-[0.2em] font-medium uppercase mb-3 flex items-center justify-center gap-2">
+                <span class="inline-block w-6 h-[1px] bg-primary/60"></span>
+                02 — THE ENCOUNTER TRILOGY
+                <span class="inline-block w-6 h-[1px] bg-primary/60"></span>
+              </span>
+              <h2 class="font-oswald text-3xl sm:text-4xl lg:text-5xl font-bold text-ink uppercase tracking-wide mb-4">
+                Three Encounters. One Story.
+              </h2>
+              <p class="font-garamond italic text-xl sm:text-2xl text-slate-custom font-normal">
+                A Trilogy of Fate, Ambition, &amp; Redemption in Kansas City
+              </p>
             </div>
+
+            <!-- 3-Book Publishing Catalog Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-10 sm:mb-16 lg:mb-24">
+              
+              <!-- BOOK 01 CARD -->
+              <div class="group flex flex-col items-start bg-pure-white p-6 sm:p-8 rounded-2xl border border-hairline/70 shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="w-full flex justify-center mb-8 relative">
+                  <div class="relative w-full max-w-[260px] aspect-book-cover flex items-center justify-center">
+                    <img
+                      src="assets/images/book_1.png"
+                      alt="Book Cover for A Chance Encounter by George H. Cook"
+                      class="w-full h-auto object-contain book-shadow rounded-lg transition-transform duration-300 group-hover:-translate-y-2"
+                      loading="lazy"
+                      width="300"
+                      height="416"
+                    />
+                  </div>
+                </div>
+                
+                <span class="font-oswald text-xs font-bold tracking-widest text-primary uppercase mb-2 block">BOOK 01</span>
+                <h3 class="font-oswald text-2xl font-bold text-ink uppercase tracking-wide mb-3 group-hover:text-primary transition-colors">
+                  A Chance Encounter
+                </h3>
+                <p class="font-roboto text-slate-custom text-sm leading-relaxed mb-6 font-light flex-grow">
+                  Set in the heart of Kansas City, where ambition, romance, and redemption collide. Greg, Carry, and Veronica navigate fateful choices in an unforgettable introduction to the trilogy.
+                </p>
+
+                <div class="w-full pt-4 border-t border-hairline/60 flex flex-col gap-2.5">
+                  <a
+                    href="https://www.amazon.com/dp/B0G1KSG77X?ref=cm_sw_r_ffobk_cp_ud_dp_T2QMFD1XYM9YEJGMCV3B&ref_=cm_sw_r_ffobk_cp_ud_dp_T2QMFD1XYM9YEJGMCV3B&social_share=cm_sw_r_ffobk_cp_ud_dp_T2QMFD1XYM9YEJGMCV3B&bestFormat=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full text-center py-2.5 bg-primary hover:bg-primary-hover text-white font-oswald text-xs font-medium tracking-wider uppercase rounded transition-colors shadow-sm"
+                  >
+                    Buy On Amazon
+                  </a>
+                  <a
+                    href="https://www.barnesandnoble.com/w/a-chance-encounter-george-h-cook/1150437160?ean=9798260374962"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full text-center py-2.5 bg-transparent hover:bg-slate-100 text-ink font-oswald text-xs font-medium tracking-wider uppercase rounded border border-hairline transition-colors"
+                  >
+                    Buy on Barnes &amp; Noble
+                  </a>
+                </div>
+              </div>
+
+              <!-- BOOK 02 CARD -->
+              <div class="group flex flex-col items-start bg-pure-white p-6 sm:p-8 rounded-2xl border border-hairline/70 shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="w-full flex justify-center mb-8 relative">
+                  <div class="relative w-full max-w-[260px] aspect-book-cover flex items-center justify-center">
+                    <img
+                      src="assets/images/book_2.webp"
+                      alt="Book Cover for A Random Encounter by George H. Cook"
+                      class="w-full h-auto object-contain book-shadow rounded-lg transition-transform duration-300 group-hover:-translate-y-2"
+                      loading="lazy"
+                      width="300"
+                      height="416"
+                    />
+                  </div>
+                </div>
+                
+                <span class="font-oswald text-xs font-bold tracking-widest text-primary uppercase mb-2 block">BOOK 02</span>
+                <h3 class="font-oswald text-2xl font-bold text-ink uppercase tracking-wide mb-3 group-hover:text-primary transition-colors">
+                  A Random Encounter
+                </h3>
+                <p class="font-roboto text-slate-custom text-sm leading-relaxed mb-6 font-light flex-grow">
+                  The journey deepens as ambition and loyalty clash. Secrets surface in Kansas City, testing bonds and choices when unexpected encounters alter every character's trajectory.
+                </p>
+
+                <div class="w-full pt-4 border-t border-hairline/60 flex flex-col gap-2.5">
+                  <a
+                    href="https://www.amazon.com/Random-Encounter-Ambition-Betrayal-Collide-ebook/dp/B0GZLPC71L?ref_=saga_dp_bnx_dsk_dp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full text-center py-2.5 bg-primary hover:bg-primary-hover text-white font-oswald text-xs font-medium tracking-wider uppercase rounded transition-colors shadow-sm"
+                  >
+                    Buy On Amazon
+                  </a>
+                  <a
+                    href="https://www.barnesandnoble.com/w/a-random-encounter-george-h-cook/1150460546?ean=9798182501057"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full text-center py-2.5 bg-transparent hover:bg-slate-100 text-ink font-oswald text-xs font-medium tracking-wider uppercase rounded border border-hairline transition-colors"
+                  >
+                    Buy on Barnes &amp; Noble
+                  </a>
+                </div>
+              </div>
+
+              <!-- BOOK 03 CARD -->
+              <div class="group flex flex-col items-start bg-pure-white p-6 sm:p-8 rounded-2xl border border-hairline/70 shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="w-full flex justify-center mb-8 relative">
+                  <div class="relative w-full max-w-[260px] aspect-book-cover flex items-center justify-center">
+                    <img
+                      src="assets/images/book_3.png"
+                      alt="Book Cover for A Social Encounter by George H. Cook"
+                      class="w-full h-auto object-contain book-shadow rounded-lg transition-transform duration-300 group-hover:-translate-y-2"
+                      loading="lazy"
+                      width="300"
+                      height="416"
+                    />
+                  </div>
+                </div>
+                
+                <span class="font-oswald text-xs font-bold tracking-widest text-primary uppercase mb-2 block">BOOK 03</span>
+                <h3 class="font-oswald text-2xl font-bold text-ink uppercase tracking-wide mb-3 group-hover:text-primary transition-colors">
+                  A Social Encounter
+                </h3>
+                <p class="font-roboto text-slate-custom text-sm leading-relaxed mb-6 font-light flex-grow">
+                  The dramatic conclusion to The Encounter Trilogy. High-stakes rivalries, pivotal chapters, and life-changing decisions bring every character's journey to a powerful climax.
+                </p>
+
+                <div class="w-full pt-4 border-t border-hairline/60 flex flex-col gap-2.5">
+                  <a
+                    href="https://www.amazon.com/Social-Encounter-Where-Forgiveness-Collide-ebook/dp/B0HBFFS79X?ref_=saga_dp_bnx_dsk_dp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full text-center py-2.5 bg-primary hover:bg-primary-hover text-white font-oswald text-xs font-medium tracking-wider uppercase rounded transition-colors shadow-sm"
+                  >
+                    Pre-Order On Amazon
+                  </a>
+                  <a
+                    href="https://www.barnesandnoble.com/w/a-social-encounter-george-h-cook/1150934284?ean=9798182546188"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full text-center py-2.5 bg-transparent hover:bg-slate-100 text-ink font-oswald text-xs font-medium tracking-wider uppercase rounded border border-hairline transition-colors"
+                  >
+                    Pre-Order On Barnes &amp; Noble
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- INSIDE THE STORY EXCERPT GALLERY -->
+            <div id="excerpts-section" class="pt-10 sm:pt-14 lg:pt-16 border-t border-hairline/70">
+              <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                  <span class="font-oswald text-xs font-bold tracking-widest text-primary uppercase block mb-1">INSIDE THE STORY</span>
+                  <h3 class="font-oswald text-2xl sm:text-3xl font-bold text-ink uppercase tracking-wide">
+                    Pivotal Excerpts &amp; Previews
+                  </h3>
+                </div>
+                <p class="font-roboto text-slate-custom text-sm max-w-md font-light">
+                  Peek into dramatic scenes and boardrooms from Kansas City before reading.
+                </p>
+              </div>
+
+              <!-- Rebuilt Excerpt Image Grid (1 Column Mobile, 2 Column Tablet, 3 Column Desktop - 100% Uncropped Artwork) -->
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 overflow-visible relative">
+                
+                <!-- Excerpt 01 -->
+                <div class="group relative flex flex-col bg-pure-white rounded-2xl border border-hairline/80 shadow-sm hover:scale-110 hover:z-50 hover:shadow-2xl hover:border-primary/60 focus-within:scale-110 focus-within:z-50 focus-within:ring-2 focus-within:ring-primary focus-within:shadow-2xl transition-all duration-300 ease-out p-4 cursor-pointer origin-center" tabindex="0">
+                  <div class="w-full flex justify-center items-center overflow-hidden rounded-xl bg-slate-100/80 p-2">
+                    <img
+                      src="assets/images/screenshots/shot1.webp"
+                      alt="Interior excerpt screenshot showing Greg and Carry at a Kansas City restaurant"
+                      class="w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="pt-4 px-1 flex items-center justify-between">
+                    <span class="font-oswald text-xs font-bold text-primary uppercase tracking-wider">Excerpt 01</span>
+                    <span class="font-roboto text-xs text-slate-custom font-light">A Chance Encounter</span>
+                  </div>
+                </div>
+
+                <!-- Excerpt 02 -->
+                <div class="group relative flex flex-col bg-pure-white rounded-2xl border border-hairline/80 shadow-sm hover:scale-110 hover:z-50 hover:shadow-2xl hover:border-primary/60 focus-within:scale-110 focus-within:z-50 focus-within:ring-2 focus-within:ring-primary focus-within:shadow-2xl transition-all duration-300 ease-out p-4 cursor-pointer origin-center" tabindex="0">
+                  <div class="w-full flex justify-center items-center overflow-hidden rounded-xl bg-slate-100/80 p-2">
+                    <img
+                      src="assets/images/screenshots/shot2.webp"
+                      alt="Book page screenshot depicting scene at Club Euchre"
+                      class="w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="pt-4 px-1 flex items-center justify-between">
+                    <span class="font-oswald text-xs font-bold text-primary uppercase tracking-wider">Excerpt 02</span>
+                    <span class="font-roboto text-xs text-slate-custom font-light">A Chance Encounter</span>
+                  </div>
+                </div>
+
+                <!-- Excerpt 03 -->
+                <div class="group relative flex flex-col bg-pure-white rounded-2xl border border-hairline/80 shadow-sm hover:scale-110 hover:z-50 hover:shadow-2xl hover:border-primary/60 focus-within:scale-110 focus-within:z-50 focus-within:ring-2 focus-within:ring-primary focus-within:shadow-2xl transition-all duration-300 ease-out p-4 cursor-pointer origin-center" tabindex="0">
+                  <div class="w-full flex justify-center items-center overflow-hidden rounded-xl bg-slate-100/80 p-2">
+                    <img
+                      src="assets/images/screenshots/shot3.webp"
+                      alt="Dramatic moment with Veronica confronting Greg"
+                      class="w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="pt-4 px-1 flex items-center justify-between">
+                    <span class="font-oswald text-xs font-bold text-primary uppercase tracking-wider">Excerpt 03</span>
+                    <span class="font-roboto text-xs text-slate-custom font-light">A Chance Encounter</span>
+                  </div>
+                </div>
+
+                <!-- Excerpt 04 -->
+                <div class="group relative flex flex-col bg-pure-white rounded-2xl border border-hairline/80 shadow-sm hover:scale-110 hover:z-50 hover:shadow-2xl hover:border-primary/60 focus-within:scale-110 focus-within:z-50 focus-within:ring-2 focus-within:ring-primary focus-within:shadow-2xl transition-all duration-300 ease-out p-4 cursor-pointer origin-center" tabindex="0">
+                  <div class="w-full flex justify-center items-center overflow-hidden rounded-xl bg-slate-100/80 p-2">
+                    <img
+                      src="assets/images/screenshots/shot4.webp"
+                      alt="Hospital scene excerpt featuring Tessa, Erica, and Greg"
+                      class="w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="pt-4 px-1 flex items-center justify-between">
+                    <span class="font-oswald text-xs font-bold text-primary uppercase tracking-wider">Excerpt 04</span>
+                    <span class="font-roboto text-xs text-slate-custom font-light">A Chance Encounter</span>
+                  </div>
+                </div>
+
+                <!-- Excerpt 05 -->
+                <div class="group relative flex flex-col bg-pure-white rounded-2xl border border-hairline/80 shadow-sm hover:scale-110 hover:z-50 hover:shadow-2xl hover:border-primary/60 focus-within:scale-110 focus-within:z-50 focus-within:ring-2 focus-within:ring-primary focus-within:shadow-2xl transition-all duration-300 ease-out p-4 cursor-pointer origin-center" tabindex="0">
+                  <div class="w-full flex justify-center items-center overflow-hidden rounded-xl bg-slate-100/80 p-2">
+                    <img
+                      src="assets/images/screenshots/shot5.webp"
+                      alt="Kansas City skyline excerpt with Greg, David, and Darren"
+                      class="w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="pt-4 px-1 flex items-center justify-between">
+                    <span class="font-oswald text-xs font-bold text-primary uppercase tracking-wider">Excerpt 05</span>
+                    <span class="font-roboto text-xs text-slate-custom font-light">A Chance Encounter</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
           </div>
         </section>
 
-        <!-- CAST OF CHARACTERS SECTION -->
-        <section id="cast-section" class="py-24 px-6 bg-slate-950 text-white relative overflow-hidden">
-          <!-- background vector polygon overlay -->
+        <!-- CAST OF CHARACTERS SECTION (Transition: Inside Story -> Ensemble) -->
+        <section id="cast-section" class="py-16 sm:py-20 lg:py-24 px-6 bg-navy text-white relative overflow-hidden border-t border-hairline/40 border-b border-white/10">
+          <div id="characters-section"></div>
+          <!-- Subtle atmospheric background vector overlay -->
           <div class="absolute inset-0 bg-cover bg-center opacity-5 pointer-events-none" style="background-image: url('assets/images/polygon.webp');"></div>
+          <div class="absolute -bottom-24 -left-24 w-[450px] h-[450px] bg-primary/10 rounded-full filter blur-3xl pointer-events-none"></div>
           
           <div class="max-w-7xl mx-auto relative z-10">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            
+            <!-- Section Header & Controls -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
               <div>
-                <span class="text-primary font-bold text-xs tracking-widest uppercase mb-3 block">MEET THE ENSEMBLE</span>
-                <h2 class="font-oswald text-3xl sm:text-4xl font-bold tracking-wider uppercase">
+                <span class="editorial-label text-primary font-oswald text-xs sm:text-sm tracking-[0.2em] font-medium uppercase mb-3 flex items-center gap-2">
+                  <span class="inline-block w-6 h-[1px] bg-primary/60"></span>
+                  03 — MEET THE ENSEMBLE
+                </span>
+                <h2 class="font-oswald text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wide uppercase text-white mb-3">
                   Cast of Characters
                 </h2>
-                <div class="h-1 w-16 bg-primary mt-6"></div>
+                <p class="font-garamond italic text-xl sm:text-2xl text-slate-300 font-normal">
+                  The Characters Behind The Encounter Trilogy
+                </p>
               </div>
               
-              <!-- Custom Carousel Controls -->
-              <div id="carouselMultiItemExample" class="flex gap-4 items-center">
+              <!-- Carousel Controls -->
+              <div id="carouselMultiItemExample" class="flex gap-3 items-center">
                 <button
-                  class="p-3 bg-slate-900 border border-slate-800 rounded-full hover:bg-primary hover:border-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950"
+                  class="p-3 bg-navy-dark border border-white/15 rounded-lg hover:bg-primary hover:border-primary text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-navy shadow-md"
                   type="button"
                   data-slide="prev"
-                  aria-label="Previous characters"
+                  aria-label="Previous character slide"
                 >
                   <!-- Prev Arrow SVG -->
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
                 <button
-                  class="p-3 bg-slate-900 border border-slate-800 rounded-full hover:bg-primary hover:border-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950"
+                  class="p-3 bg-navy-dark border border-white/15 rounded-lg hover:bg-primary hover:border-primary text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-navy shadow-md"
                   type="button"
                   data-slide="next"
-                  aria-label="Next characters"
+                  aria-label="Next character slide"
                 >
                   <!-- Next Arrow SVG -->
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
               </div>
             </div>
 
-            <!-- Inner Carousel List (HTML acts as fallback / crawlable source) -->
-            <div class="carousel-inner">
+            <!-- Inner Character Showcase Grid / Track Container -->
+            <div class="carousel-inner min-h-[440px] flex items-center justify-center">
               
               <!-- CHARACTER 1 -->
               <div class="card">
                 <img src="assets/images/carousel/greg.webp" alt="Portrait of Greg Garrelson, founding tri-partner and COO at Pimico" />
                 <div class="card-body">
+                  <span class="card-role">COO &bull; PIMICO</span>
                   <h5 class="card-title">Greg Garrelson</h5>
                   <p class="card-text">Founding tri-partner/COO and top investment manager at Pimico (Professional Investment Management Innovation Corporation).</p>
                 </div>
@@ -363,8 +591,9 @@
               <div class="card">
                 <img src="assets/images/carousel/carry.webp" alt="Portrait of Carry Mitchelson, Greg's personal assistant" />
                 <div class="card-body">
+                  <span class="card-role">PERSONAL ASSISTANT</span>
                   <h5 class="card-title">Carry Mitchelson</h5>
-                  <p class="card-text">Greg’s new personal assistant, described as a stunning blonde bombshell with captivating green eyes, well-built, long wavy blonde hair, strong back, nice-shaped thighs, well-rounded butt, and smooth legs.</p>
+                  <p class="card-text">Greg’s new personal assistant, described as a stunning bombshell with captivating green eyes, well-built, and highly capable.</p>
                 </div>
               </div>
 
@@ -372,8 +601,9 @@
               <div class="card">
                 <img src="assets/images/carousel/veronica.webp" alt="Portrait of Veronica LaFayette, singer-songwriter" />
                 <div class="card-body">
+                  <span class="card-role">SINGER-SONGWRITER</span>
                   <h5 class="card-title">Veronica LaFayette</h5>
-                  <p class="card-text">Successful singer-songwriter with a mesmerizing voice and striking dark hair, blue eyes, and a 1920s bob haircut. Highly intelligent and deeply passionate.</p>
+                  <p class="card-text">Successful singer-songwriter with a mesmerizing voice and striking dark hair. Highly intelligent and deeply passionate.</p>
                 </div>
               </div>
 
@@ -381,6 +611,7 @@
               <div class="card">
                 <img src="assets/images/carousel/david.webp" alt="Portrait of David Michaels, CEO and founding tri-partner at Pimico" />
                 <div class="card-body">
+                  <span class="card-role">CEO &bull; PIMICO</span>
                   <h5 class="card-title">David Michaels</h5>
                   <p class="card-text">Greg’s best friend, CEO, and founding tri-partner at Pimico.</p>
                 </div>
@@ -390,6 +621,7 @@
               <div class="card">
                 <img src="assets/images/carousel/tessa.webp" alt="Portrait of Tessa Garrelson, Greg's younger sister" />
                 <div class="card-body">
+                  <span class="card-role">FAMILY</span>
                   <h5 class="card-title">Tessa Garrelson</h5>
                   <p class="card-text">Greg’s younger sister, close in age, described as important to Greg and David’s past.</p>
                 </div>
@@ -399,8 +631,9 @@
               <div class="card">
                 <img src="assets/images/carousel/erica.webp" alt="Portrait of Erica Stamson, Greg's former partner" />
                 <div class="card-body">
+                  <span class="card-role">FORMER PARTNER</span>
                   <h5 class="card-title">Erica Stamson</h5>
-                  <p class="card-text">Greg’s ex-girlfriend, described as a longtime consort who leaves Greg, triggering his downward spiral.</p>
+                  <p class="card-text">Greg’s ex-girlfriend, described as a longtime consort whose sudden exit triggers Greg's downward spiral.</p>
                 </div>
               </div>
 
@@ -408,6 +641,7 @@
               <div class="card">
                 <img src="assets/images/carousel/janet.webp" alt="Portrait of Janet Thompson, longtime personal assistant" />
                 <div class="card-body">
+                  <span class="card-role">EXECUTIVE ASSISTANT</span>
                   <h5 class="card-title">Janet Thompson</h5>
                   <p class="card-text">Greg’s longtime personal assistant, described as highly competent and reliable.</p>
                 </div>
@@ -417,8 +651,9 @@
               <div class="card">
                 <img src="assets/images/carousel/molly.webp" alt="Portrait of Molly Kierson, David's personal assistant" />
                 <div class="card-body">
+                  <span class="card-role">EXECUTIVE ASSISTANT</span>
                   <h5 class="card-title">Molly Kierson</h5>
-                  <p class="card-text">David’s personal assistant, described as a beautiful, medium dark-skinned woman in her early 30s, long dark hair, dark brown eyes, petite frame.</p>
+                  <p class="card-text">David’s personal assistant, described as a beautiful, medium dark-skinned woman in her early 30s.</p>
                 </div>
               </div>
 
@@ -426,8 +661,9 @@
               <div class="card">
                 <img src="assets/images/carousel/darren.webp" alt="Portrait of Dr. Darren Michaels, doctor at the clinic" />
                 <div class="card-body">
+                  <span class="card-role">CLINIC DOCTOR</span>
                   <h5 class="card-title">Dr. Darren Michaels</h5>
-                  <p class="card-text">David’s twin brother, a doctor at the clinic, tall with dark hair, light green eyes, stout build, short full face beard.</p>
+                  <p class="card-text">David’s twin brother, a dedicated doctor at the clinic, tall with dark hair and light green eyes.</p>
                 </div>
               </div>
 
@@ -435,8 +671,9 @@
               <div class="card">
                 <img src="assets/images/carousel/wendy.webp" alt="Portrait of Wendy Calput, marketing student and server" />
                 <div class="card-body">
+                  <span class="card-role">STUDENT &bull; MODEL</span>
                   <h5 class="card-title">Wendy Calput</h5>
-                  <p class="card-text">Age 22, is a marketing and business administration student at Penn Valley Community College and works as a model and server at Black Angus Bar &amp; Grill. The daughter of Millard &ldquo;The Enforcer&rdquo; Calput and niece of Jenny Easthaus, Wendy is intelligent, ambitious, and calculating. She quietly plots her rise within the Easthaus/Pendergast organization, using her cousin Katie to help execute her plans.</p>
+                  <p class="card-text">Marketing student and server. Intelligent, ambitious, and calculating as she plots her rise.</p>
                 </div>
               </div>
 
@@ -444,8 +681,9 @@
               <div class="card">
                 <img src="assets/images/carousel/cassie.webp" alt="Portrait of Cassie Easthaus, college student, model, and waitress" />
                 <div class="card-body">
+                  <span class="card-role">STUDENT &bull; WAITRESS</span>
                   <h5 class="card-title">Cassie Easthaus</h5>
-                  <p class="card-text">Age 22, is a college student, part-time model, and waitress who lives with Carry and Wendy. Born into the powerful Easthaus/Pendergast family, she rejects its ruthless ways. After suspecting Carry is the long-lost heir, Cassie chooses to protect her, becoming a key player in exposing the family organization.</p>
+                  <p class="card-text">College student and waitress who lives with Carry. Chooses to protect Carry and expose family secrets.</p>
                 </div>
               </div>
 
@@ -453,140 +691,181 @@
           </div>
         </section>
 
-        <!-- AUTHOR SECTION (ABOUT AUTHOR) -->
-        <section id="about-section" class="py-24 px-6 bg-white scroll-mt-24">
+        <!-- ABOUT GEORGE H. COOK SECTION -->
+        <section id="about-section" class="py-16 sm:py-20 lg:py-24 px-6 bg-paper relative">
           <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               
-              <!-- Left Side: Profile Image -->
+              <!-- Left Column: Author Portrait Presentation (Uncropped) -->
               <div class="lg:col-span-5 flex justify-center w-full">
-                <div class="relative w-full max-w-[450px] aspect-book-cover overflow-hidden rounded-2xl shadow-xl group border border-slate-100">
-                  <img
-                    src="assets/images/author_1.webp"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
-                    alt="George H Cook - Book Author & Publisher"
-                    loading="lazy"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent"></div>
+                <div class="relative w-full max-w-[440px] bg-pure-white p-3 rounded-2xl border border-hairline/70 shadow-md group">
+                  <div class="w-full overflow-hidden rounded-xl bg-slate-100 flex items-center justify-center">
+                    <img
+                      src="assets/images/author_1.webp"
+                      class="w-full h-auto object-contain rounded-xl transition-transform duration-500 group-hover:scale-[1.01]"
+                      alt="George H Cook - Author of The Encounter Trilogy"
+                      loading="lazy"
+                      width="440"
+                      height="560"
+                    />
+                  </div>
                 </div>
               </div>
 
-              <!-- Right Side: Content Bio -->
-              <div class="lg:col-span-7 flex flex-col items-start">
-                <span class="text-primary font-bold text-xs tracking-widest uppercase mb-3 block">THE CREATIVE MIND</span>
-                <h2 class="text-slate-900 font-oswald text-3xl sm:text-4xl font-bold tracking-wider uppercase mb-6">
-                  Hello, It's George
+              <!-- Right Column: Editorial Biography -->
+              <div class="lg:col-span-7 flex flex-col items-start text-left">
+                <span class="editorial-label text-primary font-oswald text-xs sm:text-sm tracking-[0.2em] font-medium uppercase mb-3 flex items-center gap-2">
+                  <span class="inline-block w-6 h-[1px] bg-primary/60"></span>
+                  04 — THE AUTHOR
+                </span>
+                <h2 class="font-oswald text-3xl sm:text-4xl lg:text-5xl font-bold text-ink uppercase tracking-wide mb-2">
+                  George H. Cook
                 </h2>
-                <div class="h-1 w-16 bg-primary mb-8"></div>
+                <p class="font-garamond italic text-xl sm:text-2xl text-slate-custom font-normal mb-4">
+                  The Writer Behind The Encounter Trilogy
+                </p>
+                <div class="h-0.5 w-16 bg-primary mb-6"></div>
 
-                <div class="space-y-6 text-slate-600 font-light leading-relaxed text-base">
+                <div class="space-y-4 sm:space-y-5 text-slate-custom font-roboto font-light leading-relaxed text-base">
                   <p>
-                    Born and raised in Southwest Kansas. A graduate of Protection High School in 1986, serving in the U.S. Navy from 1986-1995, traveling the world and experiencing the vibrancy and differences of many cultures around the globe as well as seeing many historical sites. He moved to Kansas City in 1999, marrying his wife Carmen in August 2001.
+                    Born and raised in Southwest Kansas. A graduate of Protection High School in 1986, serving in the U.S. Navy from 1986–1995, traveling the world and experiencing the vibrancy and differences of many cultures around the globe as well as seeing many historical sites. He moved to Kansas City in 1999, marrying his wife Carmen in August 2001.
                   </p>
                   <p>
-                    The Reform Party of Kansas nominated him for United States Senate – Kansas in both 2002 and 2004. Following those campaigns for public office, George and his wife Carmen focused on family, and raising their 4 children.
+                    The Reform Party of Kansas nominated him for United States Senate – Kansas in both 2002 and 2004. Following those campaigns for public office, George and his wife Carmen focused on family, raising their four children.
                   </p>
                   <p>
-                    This led to the writing of the first short story — <em>I had a bad dream on a dark, stormy Night</em>. As the children expressed their ideas for what they wanted to become, more short stories were written. Finally, there were enough short stories to combine into a small book — <em>Adventures in Dreamland</em> — published in May 2022.
+                    This led to the writing of his first short story — <em>I had a bad dream on a dark, stormy Night</em>. As the children expressed their ideas for what they wanted to become, more short stories followed, culminating in his debut collection — <em>Adventures in Dreamland</em> — published in May 2022.
                   </p>
+                  
+                  <!-- Editorial Pull Quote -->
+                  <blockquote class="my-5 pl-4 border-l-2 border-primary font-garamond italic text-xl text-ink leading-relaxed">
+                    &ldquo;What started as a love triangle concept in 1988 morphed into a compelling trilogy of fate, ambition, and redemption set in Kansas City.&rdquo;
+                  </blockquote>
+
                   <p>
-                    After publishing his first book, he began to work on other story ideas. What started as a love triangle concept in 1988, morphed into a trilogy of novels. Thirty-one months of writing labor, even after having a stroke, finally brought forth book one of the trilogy — <strong>A Chance Encounter</strong> — published in November 2025. Currently, he is working on book two of the trilogy — <strong>A Random Encounter</strong>.
+                    Thirty-one months of writing labor, even after overcoming a stroke, brought forth the first book of the trilogy — <strong class="font-medium text-ink">A Chance Encounter</strong> — published in November 2025 and now available for purchase. Book two — <strong class="font-medium text-ink">A Random Encounter</strong> — is also available for purchase. The third and final book in The Encounter Trilogy is currently in preview and available for pre-order.
                   </p>
                 </div>
 
-                <div class="mt-8 flex items-center justify-between w-full border-t border-slate-100 pt-6">
-                  <div class="flex flex-col">
-                    <span class="text-slate-900 font-bold font-oswald tracking-wide text-lg">George H. Cook</span>
-                    <span class="text-slate-400 text-sm font-light">Book Author &amp; Publisher</span>
+                <!-- Signature & CTA Block -->
+                <div class="mt-8 pt-6 border-t border-hairline/60 flex flex-col sm:flex-row items-start sm:items-center justify-between w-full gap-4">
+                  <div class="flex items-center gap-6">
+                    <div class="flex flex-col">
+                      <span class="text-ink font-bold font-oswald tracking-wide text-lg uppercase">George H. Cook</span>
+                      <span class="text-slate-custom text-xs font-roboto font-light">Book Author &amp; Publisher</span>
+                    </div>
+                    <img
+                      src="assets/images/signature.webp"
+                      class="h-12 w-auto object-contain opacity-90"
+                      alt="George H Cook signature"
+                      loading="lazy"
+                    />
                   </div>
-                  <img
-                    src="assets/images/signature.webp"
-                    class="h-16 w-auto object-contain"
-                    alt="George H Cook signature"
-                    loading="lazy"
-                  />
+
+                  <a
+                    href="#books-section"
+                    class="px-6 py-2.5 bg-navy hover:bg-navy-dark text-white font-oswald text-xs font-medium tracking-wider uppercase rounded transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  >
+                    EXPLORE THE TRILOGY &rarr;
+                  </a>
                 </div>
+
               </div>
             </div>
           </div>
         </section>
 
-        <!-- TESTIMONIALS SECTION -->
-        <section id="testimonial-section" class="py-24 px-6 bg-slate-50 border-t border-slate-200/50">
+        <!-- READER TESTIMONIALS SECTION -->
+        <section id="testimonial-section" class="py-16 sm:py-20 lg:py-24 px-6 bg-paper border-b border-hairline/60 relative scroll-mt-20 sm:scroll-mt-24">
           <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-              <span class="text-primary font-bold text-xs tracking-widest uppercase mb-3 block">READER REVIEWS</span>
-              <h2 class="text-slate-900 font-oswald text-3xl sm:text-4xl font-bold tracking-wider uppercase mb-4">
+            
+            <!-- Section Editorial Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+              <span class="editorial-label text-primary font-oswald text-xs sm:text-sm tracking-[0.2em] font-medium uppercase mb-3 flex items-center justify-center gap-2">
+                <span class="inline-block w-6 h-[1px] bg-primary/60"></span>
+                05 — READER REVIEWS
+                <span class="inline-block w-6 h-[1px] bg-primary/60"></span>
+              </span>
+              <h2 class="font-oswald text-3xl sm:text-4xl lg:text-5xl font-bold text-ink uppercase tracking-wide mb-3">
                 Testimonials From Readers
               </h2>
-              <div class="h-1 w-16 bg-primary mx-auto"></div>
+              <p class="font-garamond italic text-xl sm:text-2xl text-slate-custom font-normal">
+                What Readers &amp; Reviewers Are Saying About The Encounter Trilogy
+              </p>
             </div>
 
+            <!-- 3-Card Editorial Testimonial Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
               
               <!-- TESTIMONIAL 1 -->
-              <div class="flex flex-col bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
-                <div class="flex-grow">
-                  <!-- Quote mark icon -->
-                  <span class="text-primary/20 text-6xl font-serif leading-none block h-4 mb-2 select-none" aria-hidden="true">&ldquo;</span>
-                  <p class="text-slate-600 font-light text-sm sm:text-base leading-relaxed mb-6 italic">
+              <div class="group flex flex-col bg-pure-white p-6 sm:p-8 rounded-2xl border border-hairline/70 shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="flex-grow flex flex-col">
+                  <!-- Opening Quote Graphic -->
+                  <span class="font-garamond text-primary/30 text-5xl sm:text-6xl leading-none block -mb-4 select-none" aria-hidden="true">&ldquo;</span>
+                  <p class="font-garamond italic text-slate-custom text-base sm:text-lg leading-relaxed font-normal mb-6 flex-grow">
                     A wonderful contemporary romance for library shelves. A Chance Encounter is exactly the kind of story library patrons love: charming, emotional and easy to get lost in. Greg's imperfections make him compelling and Carry is a warm, bright presence from the moment she appears. The pacing is excellent and the corporate setting adds depth without overwhelming the romance. This book is going straight on my recommended reading list.
                   </p>
                 </div>
-                <div class="flex items-center gap-4 mt-6 pt-6 border-t border-slate-50">
+                <div class="flex items-center gap-4 pt-6 border-t border-hairline/60">
                   <img
                     src="assets/images/person_1.webp"
-                    class="h-12 w-12 rounded-full object-cover border-2 border-slate-100"
+                    class="h-12 w-12 rounded-full object-cover border border-hairline/80 shadow-xs"
                     alt="Eleanor B portrait"
                     loading="lazy"
+                    width="48"
+                    height="48"
                   />
                   <div>
-                    <span class="block text-slate-900 font-bold font-oswald tracking-wide">Eleanor B.</span>
-                    <span class="text-slate-400 text-xs font-light">Public Librarian</span>
+                    <span class="block text-ink font-bold font-oswald tracking-wide text-base uppercase">Eleanor B.</span>
+                    <span class="text-slate-custom text-xs font-roboto font-light">Public Librarian</span>
                   </div>
                 </div>
               </div>
 
               <!-- TESTIMONIAL 2 -->
-              <div class="flex flex-col bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
-                <div class="flex-grow">
-                  <span class="text-primary/20 text-6xl font-serif leading-none block h-4 mb-2 select-none" aria-hidden="true">&ldquo;</span>
-                  <p class="text-slate-600 font-light text-sm sm:text-base leading-relaxed mb-6 italic">
+              <div class="group flex flex-col bg-pure-white p-6 sm:p-8 rounded-2xl border border-hairline/70 shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="flex-grow flex flex-col">
+                  <span class="font-garamond text-primary/30 text-5xl sm:text-6xl leading-none block -mb-4 select-none" aria-hidden="true">&ldquo;</span>
+                  <p class="font-garamond italic text-slate-custom text-base sm:text-lg leading-relaxed font-normal mb-6 flex-grow">
                     5 STAR REVIEW! A romance that feels alive. This book hooked me fast. The chemistry between Greg and Carry feels natural and Veronica's confidence adds the perfect amount of fire. Their moments at Club Euchre bring the whole world to life. Greg's flaws, especially his issues with drinking, make him relatable and human. And I cannot overlook the excellent side characters: Nurse Greta had me cracking up more than once.
                   </p>
                 </div>
-                <div class="flex items-center gap-4 mt-6 pt-6 border-t border-slate-50">
+                <div class="flex items-center gap-4 pt-6 border-t border-hairline/60">
                   <img
                     src="assets/images/person_2.webp"
-                    class="h-12 w-12 rounded-full object-cover border-2 border-slate-100"
+                    class="h-12 w-12 rounded-full object-cover border border-hairline/80 shadow-xs"
                     alt="Marcus J Delaney portrait"
                     loading="lazy"
+                    width="48"
+                    height="48"
                   />
                   <div>
-                    <span class="block text-slate-900 font-bold font-oswald tracking-wide">Marcus J. Delaney</span>
-                    <span class="text-slate-400 text-xs font-light">Book Reviewer</span>
+                    <span class="block text-ink font-bold font-oswald tracking-wide text-base uppercase">Marcus J. Delaney</span>
+                    <span class="text-slate-custom text-xs font-roboto font-light">Book Reviewer</span>
                   </div>
                 </div>
               </div>
 
               <!-- TESTIMONIAL 3 -->
-              <div class="flex flex-col bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
-                <div class="flex-grow">
-                  <span class="text-primary/20 text-6xl font-serif leading-none block h-4 mb-2 select-none" aria-hidden="true">&ldquo;</span>
-                  <p class="text-slate-600 font-light text-sm sm:text-base leading-relaxed mb-6 italic">
+              <div class="group flex flex-col bg-pure-white p-6 sm:p-8 rounded-2xl border border-hairline/70 shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="flex-grow flex flex-col">
+                  <span class="font-garamond text-primary/30 text-5xl sm:text-6xl leading-none block -mb-4 select-none" aria-hidden="true">&ldquo;</span>
+                  <p class="font-garamond italic text-slate-custom text-base sm:text-lg leading-relaxed font-normal mb-6 flex-grow">
                     A thoughtful mix of romance and life lessons. From an educator's point of view this book offers more than romance: it provides meaningful emotional lessons. Greg's journey from denial to accountability is portrayed with surprising nuance. The relationships, especially the trio of Greg, David, and Darren, highlight loyalty, conflict resolution, and personal growth. The Prom backstory and its lingering effects were handled excellently.
                   </p>
                 </div>
-                <div class="flex items-center gap-4 mt-6 pt-6 border-t border-slate-50">
+                <div class="flex items-center gap-4 pt-6 border-t border-hairline/60">
                   <img
                     src="assets/images/person_3.webp"
-                    class="h-12 w-12 rounded-full object-cover border-2 border-slate-100"
+                    class="h-12 w-12 rounded-full object-cover border border-hairline/80 shadow-xs"
                     alt="Marissa Cole portrait"
                     loading="lazy"
+                    width="48"
+                    height="48"
                   />
                   <div>
-                    <span class="block text-slate-900 font-bold font-oswald tracking-wide">Marissa Cole</span>
-                    <span class="text-slate-400 text-xs font-light">Educator / School Teacher</span>
+                    <span class="block text-ink font-bold font-oswald tracking-wide text-base uppercase">Marissa Cole</span>
+                    <span class="text-slate-custom text-xs font-roboto font-light">Educator / School Teacher</span>
                   </div>
                 </div>
               </div>
@@ -595,250 +874,353 @@
           </div>
         </section>
 
-        <!-- CALL TO ACTION (CTA) & PREVIEW SECTION -->
-        <section id="cta-section" class="py-24 px-6 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-950 text-white relative overflow-hidden">
-          <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-60 z-0"></div>
-          
-          <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-12 items-start">
-            
-            <!-- Top Section: Books 1 & 2 Previews -->
-            <div class="lg:col-span-7 flex flex-col items-start mb-6">
-              <span class="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6">EXCLUSIVE PREVIEW BOOKS 1 &amp; 2</span>
-              
-              <h2 class="font-oswald text-3xl sm:text-4xl font-bold tracking-wide uppercase leading-tight mb-4">
-                Preview Books One &amp; Two:<br>A Social Encounter
-              </h2>
-              <p class="text-indigo-200 font-light mb-8 max-w-xl">
-              Listen to dramatized scenes and excerpts from upcoming chapters. Subscribe below to stay informed on publishing dates, pre-order launches, and author meet-and-greets.
-              </p>
+        <!-- AUDIO PREVIEW SECTION (Transition: Reviews -> Audio) -->
+        <section id="audio-section" class="py-16 sm:py-20 lg:py-24 px-6 bg-navy text-white relative overflow-hidden border-t border-hairline/40 border-b border-white/10">
+          <div id="cta-section"></div>
 
-              <!-- Audio Player Cards (Books 1 & 2) -->
-              <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- AUDIO CARD BOOK 1 -->
-                <div class="glass p-6 rounded-2xl flex flex-col items-start border border-white/10 shadow-xl backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300">
-                  <div class="flex items-center justify-between w-full mb-3">
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-[11px] font-bold tracking-wider uppercase">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                      </svg>
-                      A Social Encounter Book One
-                    </span>
-                    <span class="text-xs font-mono text-indigo-300/80 bg-slate-900/40 px-2.5 py-0.5 rounded-full border border-slate-700/50">MP3 Audio</span>
+          <!-- Atmospheric Background Radial Glow -->
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-40 pointer-events-none"></div>
+
+          <div class="max-w-7xl mx-auto relative z-10">
+            
+            <!-- Section Editorial Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+              <span class="editorial-label text-primary font-oswald text-xs sm:text-sm tracking-[0.2em] font-medium uppercase mb-3 flex items-center justify-center gap-2">
+                <span class="inline-block w-6 h-[1px] bg-primary/60"></span>
+                06 — HEAR THE STORY
+                <span class="inline-block w-6 h-[1px] bg-primary/60"></span>
+              </span>
+              <h2 class="font-oswald text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wide uppercase text-white mb-3">
+                Hear The Story
+              </h2>
+              <p class="font-garamond italic text-xl sm:text-2xl text-slate-300 font-normal">
+                Step Inside The Encounter Trilogy
+              </p>
+            </div>
+
+            <!-- 4 Custom Audio Player Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              
+              <!-- AUDIO CARD 1: BOOK 1 -->
+              <div class="custom-audio-card group flex flex-col bg-navy-dark/95 p-6 sm:p-7 rounded-2xl border border-white/12 shadow-xl hover:border-primary/50 transition-all duration-300">
+                <!-- Small Book Cover Header -->
+                <div class="w-full flex items-center justify-center mb-5 pt-2">
+                  <img
+                    src="assets/images/book_1.png"
+                    alt="A Chance Encounter book cover artwork"
+                    class="h-32 sm:h-36 w-auto object-contain rounded book-shadow transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    width="120"
+                    height="166"
+                  />
+                </div>
+
+                <!-- Badge & Book Title -->
+                <div class="flex items-center justify-between w-full mb-3">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10px] font-oswald font-bold tracking-widest uppercase">
+                    Available Now &bull; Book 01
+                  </span>
+                  <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">MP3 Audio</span>
+                </div>
+
+                <h3 class="text-white font-oswald text-xl font-bold tracking-wide uppercase mt-1 mb-1 group-hover:text-primary transition-colors">
+                  Scene: An Afternoon Date With Carry - Book 1
+                </h3>
+                <p class="text-primary font-oswald text-xs font-medium tracking-wider uppercase mb-3">
+                  Featured Characters: Carry &amp; Greg
+                </p>
+
+                <p id="audio-b1-desc" class="font-roboto text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-6 bg-slate-950/40 p-3.5 rounded-xl border border-white/5 flex-grow">
+                  <strong class="text-white font-medium">Scene Description:</strong> An audio preview from Book One ("An Afternoon Date With Carry") featuring Carry and Greg.
+                </p>
+
+                <!-- Custom Audio Control Bar -->
+                <div class="mt-auto pt-4 border-t border-white/10 flex items-center gap-4 w-full">
+                  <button
+                    type="button"
+                    class="audio-play-btn w-12 h-12 flex-shrink-0 bg-primary hover:bg-primary-hover text-white rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-navy shadow-md"
+                    aria-label="Play audio sample for A Social Encounter Book One: An Afternoon Date With Carry"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current ml-0.5 play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current hidden pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                  </button>
+
+                  <div class="flex-grow flex flex-col gap-1.5">
+                    <div class="audio-progress-container relative w-full h-2 bg-slate-800 rounded-full cursor-pointer overflow-hidden group/bar">
+                      <div class="audio-progress-bar absolute top-0 left-0 h-full bg-primary rounded-full transition-all duration-100 ease-out w-0"></div>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                      <span class="audio-time-current">00:00</span>
+                      <span class="audio-time-duration">00:00</span>
+                    </div>
                   </div>
 
-                  <h3 class="text-white font-oswald text-xl font-bold tracking-wide uppercase mt-1 mb-1">
-                    Scene: An Afternoon Date With Carry - Book 1
-                  </h3>
-                  <p class="text-indigo-300 text-xs font-medium tracking-wider uppercase mb-3">
-                    Featured Characters: Carry &amp; Greg
-                  </p>
-
-                  <p id="audio-b1-desc" class="text-indigo-100/90 text-xs leading-relaxed font-light mb-4 bg-slate-950/40 p-3 rounded-xl border border-indigo-900/30 w-full">
-                    <strong class="text-white font-medium">Scene Description:</strong> An audio preview from Book One ("An Afternoon Date With Carry") featuring Carry and Greg.
-                  </p>
-
-                  <audio controls preload="metadata" class="w-full focus:outline-none focus:ring-2 focus:ring-primary rounded-full" aria-label="Audio sample for A Social Encounter Book One: An Afternoon Date With Carry" aria-describedby="audio-b1-desc">
+                  <audio preload="metadata" class="custom-audio-element">
                     <source src="audio/Encounter Series_Book 1_An Afternoon Date With Carry.mp3" type="audio/mpeg" />
                     <source src="audio/Encounter%20Series_Book%201_An%20Afternoon%20Date%20With%20Carry.mp3" type="audio/mpeg" />
-                    Your browser does not support HTML5 audio.
                   </audio>
                 </div>
 
-                <!-- AUDIO CARD BOOK 2 -->
-                <div class="glass p-6 rounded-2xl flex flex-col items-start border border-white/10 shadow-xl backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300">
-                  <div class="flex items-center justify-between w-full mb-3">
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-[11px] font-bold tracking-wider uppercase">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                      </svg>
-                      A Social Encounter Book Two
-                    </span>
-                    <span class="text-xs font-mono text-indigo-300/80 bg-slate-900/40 px-2.5 py-0.5 rounded-full border border-slate-700/50">MP3 Audio</span>
+                <!-- Card Footer Purchase CTAs -->
+                <div class="mt-4 pt-3 w-full flex flex-col sm:flex-row gap-2.5">
+                  <a
+                    href="https://www.amazon.com/dp/B0G1KSG77X?ref=cm_sw_r_ffobk_cp_ud_dp_T2QMFD1XYM9YEJGMCV3B&ref_=cm_sw_r_ffobk_cp_ud_dp_T2QMFD1XYM9YEJGMCV3B&social_share=cm_sw_r_ffobk_cp_ud_dp_T2QMFD1XYM9YEJGMCV3B&bestFormat=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full sm:w-1/2 text-center py-2.5 bg-primary hover:bg-primary-hover text-white font-oswald text-xs font-medium tracking-wider uppercase rounded transition-colors shadow-sm"
+                  >
+                    Buy On Amazon
+                  </a>
+                  <a
+                    href="https://www.barnesandnoble.com/w/a-chance-encounter-george-h-cook/1150437160?ean=9798260374962"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full sm:w-1/2 text-center py-2.5 bg-white/10 hover:bg-white/20 text-white font-oswald text-xs font-medium tracking-wider uppercase rounded border border-white/10 transition-colors"
+                  >
+                    Barnes &amp; Noble
+                  </a>
+                </div>
+              </div>
+
+              <!-- AUDIO CARD 2: BOOK 2 -->
+              <div class="custom-audio-card group flex flex-col bg-navy-dark/95 p-6 sm:p-7 rounded-2xl border border-white/12 shadow-xl hover:border-primary/50 transition-all duration-300">
+                <!-- Small Book Cover Header -->
+                <div class="w-full flex items-center justify-center mb-5 pt-2">
+                  <img
+                    src="assets/images/book_2.webp"
+                    alt="A Random Encounter book cover artwork"
+                    class="h-32 sm:h-36 w-auto object-contain rounded book-shadow transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    width="120"
+                    height="166"
+                  />
+                </div>
+
+                <div class="flex items-center justify-between w-full mb-3">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10px] font-oswald font-bold tracking-widest uppercase">
+                    Available Now &bull; Book 02
+                  </span>
+                  <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">MP3 Audio</span>
+                </div>
+
+                <h3 class="text-white font-oswald text-xl font-bold tracking-wide uppercase mt-1 mb-1 group-hover:text-primary transition-colors">
+                  Scene: Make A Choice - Book 2
+                </h3>
+                <p class="text-primary font-oswald text-xs font-medium tracking-wider uppercase mb-3">
+                  Featured Characters: Veronica, Greg &amp; Carry
+                </p>
+
+                <p id="audio-b2-desc" class="font-roboto text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-6 bg-slate-950/40 p-3.5 rounded-xl border border-white/5 flex-grow">
+                  <strong class="text-white font-medium">Scene Description:</strong> An audio preview from Book Two ("Make A Choice") capturing Veronica, Greg, and Carry.
+                </p>
+
+                <!-- Custom Audio Control Bar -->
+                <div class="mt-auto pt-4 border-t border-white/10 flex items-center gap-4 w-full">
+                  <button
+                    type="button"
+                    class="audio-play-btn w-12 h-12 flex-shrink-0 bg-primary hover:bg-primary-hover text-white rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-navy shadow-md"
+                    aria-label="Play audio sample for A Social Encounter Book Two: Make A Choice"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current ml-0.5 play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current hidden pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                  </button>
+
+                  <div class="flex-grow flex flex-col gap-1.5">
+                    <div class="audio-progress-container relative w-full h-2 bg-slate-800 rounded-full cursor-pointer overflow-hidden group/bar">
+                      <div class="audio-progress-bar absolute top-0 left-0 h-full bg-primary rounded-full transition-all duration-100 ease-out w-0"></div>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                      <span class="audio-time-current">00:00</span>
+                      <span class="audio-time-duration">00:00</span>
+                    </div>
                   </div>
 
-                  <h3 class="text-white font-oswald text-xl font-bold tracking-wide uppercase mt-1 mb-1">
-                    Scene: Make A Choice - Book 2
-                  </h3>
-                  <p class="text-indigo-300 text-xs font-medium tracking-wider uppercase mb-3">
-                    Featured Characters: Veronica, Greg &amp; Carry
-                  </p>
-
-                  <p id="audio-b2-desc" class="text-indigo-100/90 text-xs leading-relaxed font-light mb-4 bg-slate-950/40 p-3 rounded-xl border border-indigo-900/30 w-full">
-                    <strong class="text-white font-medium">Scene Description:</strong> An audio preview from Book Two ("Make A Choice") capturing Veronica, Greg, and Carry.
-                  </p>
-
-                  <audio controls preload="metadata" class="w-full focus:outline-none focus:ring-2 focus:ring-primary rounded-full" aria-label="Audio sample for A Social Encounter Book Two: Make A Choice featuring Veronica, Greg, and Carry" aria-describedby="audio-b2-desc">
+                  <audio preload="metadata" class="custom-audio-element">
                     <source src="audio/Encounter Series_Book 2_Make A Choich Veronica Greg Carry.mp3" type="audio/mpeg" />
                     <source src="audio/Encounter%20Series_Book%202_Make%20A%20Choich%20Veronica%20Greg%20Carry.mp3" type="audio/mpeg" />
                     <source src="assets/audio/Make A Choich Veronica Greg Carry.mp3" type="audio/mpeg" />
-                    Your browser does not support HTML5 audio.
                   </audio>
                 </div>
-              </div>
-            </div>
 
-            <!-- Right Side: Cover Preview & Order Books 1 & 2 -->
-            <div class="lg:col-span-5 lg:col-start-8 lg:row-start-1 flex justify-center w-full lg:pt-44">
-              <div class="glass p-8 rounded-3xl flex flex-col items-center max-w-[400px] w-full text-center relative group">
-                <div class="absolute inset-0 bg-primary/5 rounded-3xl pointer-events-none"></div>
-                <div class="relative overflow-hidden rounded-xl shadow-lg aspect-[4/3] mb-6 w-full bg-slate-900/40">
+                <!-- Card Footer Purchase CTAs -->
+                <div class="mt-4 pt-3 w-full flex flex-col sm:flex-row gap-2.5">
+                  <a
+                    href="https://www.amazon.com/Random-Encounter-Ambition-Betrayal-Collide-ebook/dp/B0GZLPC71L?ref_=saga_dp_bnx_dsk_dp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full sm:w-1/2 text-center py-2.5 bg-primary hover:bg-primary-hover text-white font-oswald text-xs font-medium tracking-wider uppercase rounded transition-colors shadow-sm"
+                  >
+                    Buy On Amazon
+                  </a>
+                  <a
+                    href="https://www.barnesandnoble.com/w/a-random-encounter-george-h-cook/1150460546?ean=9798182501057"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full sm:w-1/2 text-center py-2.5 bg-white/10 hover:bg-white/20 text-white font-oswald text-xs font-medium tracking-wider uppercase rounded border border-white/10 transition-colors"
+                  >
+                    Barnes &amp; Noble
+                  </a>
+                </div>
+              </div>
+
+              <!-- AUDIO CARD 3: BOOK 3 EXCERPT 1 -->
+              <div class="custom-audio-card group flex flex-col bg-navy-dark/95 p-6 sm:p-7 rounded-2xl border border-white/12 shadow-xl hover:border-primary/50 transition-all duration-300">
+                <!-- Small Book Cover Header -->
+                <div class="w-full flex items-center justify-center mb-5 pt-2">
                   <img
-                    src="assets/images/books_1_2_small.webp"
-                    class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-102"
-                    alt="Promotional book cover art for Books 1 and 2 of A Social Encounter series by George H. Cook."
+                    src="assets/images/book_3.png"
+                    alt="A Social Encounter book cover artwork"
+                    class="h-32 sm:h-36 w-auto object-contain rounded book-shadow transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
+                    width="120"
+                    height="166"
                   />
                 </div>
-                <p class="text-indigo-200 text-sm font-semibold tracking-widest uppercase mb-4">Books 1 &amp; 2 Available Now!</p>
-                <a
-                  href="https://www.amazon.com/Random-Encounter-Ambition-Betrayal-Collide-ebook/dp/B0GZLPC71L/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-full py-4 bg-white hover:bg-slate-100 text-slate-950 font-bold tracking-wider rounded-full shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-950"
-                >
-                  Order Books 1 &amp; 2
-                </a>
-              </div>
-            </div>
 
-            <!-- Left Side: Audio Player, Preview Copy & Email Subscribe (Book Three) -->
-            <div class="lg:col-span-7 flex flex-col items-start">
-              <span class="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6">EXCLUSIVE SNEAK PEEK</span>
-              
-              <h2 class="font-oswald text-3xl sm:text-4xl font-bold tracking-wide uppercase leading-tight mb-4">
-                Preview Book Three:<br>A Social Encounter
-              </h2>
-              <p class="text-indigo-200 font-light mb-8 max-w-xl">
-                Listen to dramatized scenes and excerpts from upcoming chapters. Subscribe below to stay informed on publishing dates, pre-order launches, and author meet-and-greets.
-              </p>
+                <div class="flex items-center justify-between w-full mb-3">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/20 border border-primary/40 text-primary text-[10px] font-oswald font-bold tracking-widest uppercase">
+                    Preview &bull; Pre-Order Now
+                  </span>
+                  <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">MP3 Audio</span>
+                </div>
 
-              <!-- Audio Player Cards -->
-              <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                <!-- AUDIO CARD 1 -->
-                <div class="glass p-6 rounded-2xl flex flex-col items-start border border-white/10 shadow-xl backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300">
-                  <div class="flex items-center justify-between w-full mb-3">
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-[11px] font-bold tracking-wider uppercase">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                      </svg>
-                      Book 3 Preview • Excerpt 1
-                    </span>
-                    <span class="text-xs font-mono text-indigo-300/80 bg-slate-900/40 px-2.5 py-0.5 rounded-full border border-slate-700/50">MP3 Audio</span>
+                <h3 class="text-white font-oswald text-xl font-bold tracking-wide uppercase mt-1 mb-1 group-hover:text-primary transition-colors">
+                  Scene: The Attempt
+                </h3>
+                <p class="text-primary font-oswald text-xs font-medium tracking-wider uppercase mb-3">
+                  Featured Characters: Greg, Veronica &amp; Keith
+                </p>
+
+                <p id="audio1-desc" class="font-roboto text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-6 bg-slate-950/40 p-3.5 rounded-xl border border-white/5 flex-grow">
+                  <strong class="text-white font-medium">Scene Description:</strong> An emotional audio preview from Book 3 ("The Attempt") detailing the high tension moment when Greg's home is invaded by The Enforcer, featuring Greg, Veronica and Keith.
+                </p>
+
+                <!-- Custom Audio Control Bar -->
+                <div class="mt-auto pt-4 border-t border-white/10 flex items-center gap-4 w-full">
+                  <button
+                    type="button"
+                    class="audio-play-btn w-12 h-12 flex-shrink-0 bg-primary hover:bg-primary-hover text-white rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-navy shadow-md"
+                    aria-label="Play audio sample for Book 3 Scene: The Attempt"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current ml-0.5 play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current hidden pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                  </button>
+
+                  <div class="flex-grow flex flex-col gap-1.5">
+                    <div class="audio-progress-container relative w-full h-2 bg-slate-800 rounded-full cursor-pointer overflow-hidden group/bar">
+                      <div class="audio-progress-bar absolute top-0 left-0 h-full bg-primary rounded-full transition-all duration-100 ease-out w-0"></div>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                      <span class="audio-time-current">00:00</span>
+                      <span class="audio-time-duration">00:00</span>
+                    </div>
                   </div>
 
-                  <h3 class="text-white font-oswald text-xl font-bold tracking-wide uppercase mt-1 mb-1">
-                    Scene: The Attempt
-                  </h3>
-                  <p class="text-indigo-300 text-xs font-medium tracking-wider uppercase mb-3">
-                    Featured Characters: Greg, Veronica &amp; Keith
-                  </p>
-
-                  <p id="audio1-desc" class="text-indigo-100/90 text-xs leading-relaxed font-light mb-4 bg-slate-950/40 p-3 rounded-xl border border-indigo-900/30 w-full">
-                    <strong class="text-white font-medium">Scene Description:</strong> An emotional audio preview from Book 3 ("The Attempt") detailing the high tension moment when Greg's home is invaded by The Enforcer, featuring Greg, Veronica and Keith.
-                  </p>
-
-                  <audio controls preload="metadata" class="w-full focus:outline-none focus:ring-2 focus:ring-primary rounded-full" aria-label="Audio sample for Book 3 Scene: The Attempt featuring Greg, Veronica, and Keith" aria-describedby="audio1-desc">
+                  <audio preload="metadata" class="custom-audio-element">
                     <source src="audio/Encounter-Series-Book-3-THE-ATTEMPT.mp3" type="audio/mpeg" />
                     <source src="assets/audio/Encounter-Series-Book-3-THE-ATTEMPT.mp3" type="audio/mpeg" />
-                    <source src="assets/audio/Hospital Scene Tessa Erica Greg.mp3" type="audio/mpeg" />
-                    Your browser does not support HTML5 audio.
                   </audio>
                 </div>
 
-                <!-- AUDIO CARD 2 -->
-                <div class="glass p-6 rounded-2xl flex flex-col items-start border border-white/10 shadow-xl backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300">
-                  <div class="flex items-center justify-between w-full mb-3">
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-[11px] font-bold tracking-wider uppercase">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                      </svg>
-                      Book 3 Preview • Excerpt 2
-                    </span>
-                    <span class="text-xs font-mono text-indigo-300/80 bg-slate-900/40 px-2.5 py-0.5 rounded-full border border-slate-700/50">MP3 Audio</span>
-                  </div>
-
-                  <h3 class="text-white font-oswald text-xl font-bold tracking-wide uppercase mt-1 mb-1">
-                    Scene: Live For Her
-                  </h3>
-                  <p class="text-indigo-300 text-xs font-medium tracking-wider uppercase mb-3">
-                    Featured Characters: Greg &amp; Billy
-                  </p>
-
-                  <p id="audio2-desc" class="text-indigo-100/90 text-xs leading-relaxed font-light mb-4 bg-slate-950/40 p-3 rounded-xl border border-indigo-900/30 w-full">
-                    <strong class="text-white font-medium">Scene Description:</strong> A dramatic turning point clip from Book 3 ("Live For Her") capturing a life altering conversation between Greg and Billy discussing how Carry has affected both of them, and their futures while at the crossroads of moving forward or stepping aside.
-                  </p>
-
-                  <audio controls preload="metadata" class="w-full focus:outline-none focus:ring-2 focus:ring-primary rounded-full" aria-label="Audio sample for Book 3 Scene: Live For Her featuring Greg and Billy" aria-describedby="audio2-desc">
-                    <source src="audio/Encounter-Series-Book-3-Live-For-Her.mp3" type="audio/mpeg" />
-                    <source src="assets/audio/Encounter-Series-Book-3-Live-For-Her.mp3" type="audio/mpeg" />
-                    <source src="assets/audio/Make A Choich Veronica Greg Carry.mp3" type="audio/mpeg" />
-                    Your browser does not support HTML5 audio.
-                  </audio>
-                </div>
+                <!-- Card Footer Pre-Order CTA -->
+                <a
+                  href="https://www.amazon.com/Social-Encounter-Where-Forgiveness-Collide-ebook/dp/B0HBFFS79X?ref_=saga_dp_bnx_dsk_dp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-4 pt-3 w-full text-center py-2.5 bg-primary hover:bg-primary-hover text-white font-oswald text-xs font-medium tracking-wider uppercase rounded transition-colors shadow-sm"
+                >
+                  Pre-Order A Social Encounter &rarr;
+                </a>
               </div>
 
-              <!-- Email Form -->
-              <div class="w-full max-w-xl">
-                <h3 class="font-oswald text-xl font-bold tracking-wide uppercase mb-4 text-indigo-100">
-                  Subscribe For the Latest Updates
+              <!-- AUDIO CARD 4: BOOK 3 EXCERPT 2 -->
+              <div class="custom-audio-card group flex flex-col bg-navy-dark/95 p-6 sm:p-7 rounded-2xl border border-white/12 shadow-xl hover:border-primary/50 transition-all duration-300">
+                <!-- Small Book Cover Header -->
+                <div class="w-full flex items-center justify-center mb-5 pt-2">
+                  <img
+                    src="assets/images/book_3.png"
+                    alt="A Social Encounter book cover artwork"
+                    class="h-32 sm:h-36 w-auto object-contain rounded book-shadow transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    width="120"
+                    height="166"
+                  />
+                </div>
+
+                <div class="flex items-center justify-between w-full mb-3">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/20 border border-primary/40 text-primary text-[10px] font-oswald font-bold tracking-widest uppercase">
+                    Preview &bull; Pre-Order Now
+                  </span>
+                  <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">MP3 Audio</span>
+                </div>
+
+                <h3 class="text-white font-oswald text-xl font-bold tracking-wide uppercase mt-1 mb-1 group-hover:text-primary transition-colors">
+                  Scene: Live For Her
                 </h3>
-                <form
-                  action="contact.php"
-                  method="POST"
-                  class="flex flex-col sm:flex-row items-stretch gap-4"
-                  id="subscribeForm"
-                  onsubmit="handleFormSubmit(event)"
-                >
-                  <!-- Anti-spam visually hidden field -->
-                  <div class="hidden" aria-hidden="true">
-                    <label for="company_honeypot_sub">Company Name</label>
-                    <input type="text" id="company_honeypot_sub" name="company" tabindex="-1" autocomplete="off" />
+                <p class="text-primary font-oswald text-xs font-medium tracking-wider uppercase mb-3">
+                  Featured Characters: Greg &amp; Billy
+                </p>
+
+                <p id="audio2-desc" class="font-roboto text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-6 bg-slate-950/40 p-3.5 rounded-xl border border-white/5 flex-grow">
+                  <strong class="text-white font-medium">Scene Description:</strong> A dramatic turning point clip from Book 3 ("Live For Her") capturing a life altering conversation between Greg and Billy discussing how Carry has affected both of them.
+                </p>
+
+                <!-- Custom Audio Control Bar -->
+                <div class="mt-auto pt-4 border-t border-white/10 flex items-center gap-4 w-full">
+                  <button
+                    type="button"
+                    class="audio-play-btn w-12 h-12 flex-shrink-0 bg-primary hover:bg-primary-hover text-white rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-navy shadow-md"
+                    aria-label="Play audio sample for Book 3 Scene: Live For Her"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current ml-0.5 play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current hidden pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                  </button>
+
+                  <div class="flex-grow flex flex-col gap-1.5">
+                    <div class="audio-progress-container relative w-full h-2 bg-slate-800 rounded-full cursor-pointer overflow-hidden group/bar">
+                      <div class="audio-progress-bar absolute top-0 left-0 h-full bg-primary rounded-full transition-all duration-100 ease-out w-0"></div>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                      <span class="audio-time-current">00:00</span>
+                      <span class="audio-time-duration">00:00</span>
+                    </div>
                   </div>
 
-                  <input
-                    type="email"
-                    class="flex-grow px-5 py-4 rounded-full bg-slate-900/60 border border-slate-700/80 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary text-white placeholder-slate-400 font-light shadow-inner transition-all"
-                    placeholder="Enter your email address..."
-                    name="email"
-                    required
-                  />
+                  <audio preload="metadata" class="custom-audio-element">
+                    <source src="audio/Encounter-Series-Book-3-Live-For-Her.mp3" type="audio/mpeg" />
+                    <source src="assets/audio/Encounter-Series-Book-3-Live-For-Her.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
 
-                  <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_next" value="pages/thank_you.html" />
-
-                  <button 
-                    type="submit" 
-                    class="px-8 py-4 bg-primary hover:bg-primary-hover text-white font-bold tracking-wider rounded-full shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950"
-                  >
-                    Subscribe
-                  </button>
-                </form>
+                <!-- Card Footer Pre-Order CTA -->
+                <a
+                  href="https://www.amazon.com/Social-Encounter-Where-Forgiveness-Collide-ebook/dp/B0HBFFS79X?ref_=saga_dp_bnx_dsk_dp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-4 pt-3 w-full text-center py-2.5 bg-primary hover:bg-primary-hover text-white font-oswald text-xs font-medium tracking-wider uppercase rounded transition-colors shadow-sm"
+                >
+                  Pre-Order A Social Encounter &rarr;
+                </a>
               </div>
 
             </div>
 
-            <!-- Right Side: Cover Preview & Amazon Order (Aligned with Preview Book Three Title) -->
-            <div class="lg:col-span-5 lg:col-start-8 lg:row-start-2 flex justify-center w-full lg:pt-[110px]">
-              <div class="glass p-8 rounded-3xl flex flex-col items-center max-w-[400px] w-full text-center relative group">
-                <div class="absolute inset-0 bg-primary/5 rounded-3xl pointer-events-none"></div>
-                <div class="relative overflow-hidden rounded-xl shadow-lg aspect-[5/7] mb-6 w-full">
-                  <img
-                    src="assets/images/book_desktop.webp"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
-                    alt="Promotional book cover art for A Social Encounter, Book 3 of The Encounter Trilogy by George H. Cook, showing the novel resting on a executive desktop."
-                    loading="lazy"
-                  />
-                </div>
-                <p class="text-indigo-200 text-sm font-semibold tracking-widest uppercase mb-4">Pre-orders available now!</p>
-                <a
-                  href="https://www.amazon.com/Random-Encounter-Ambition-Betrayal-Collide-ebook/dp/B0GZLPC71L/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-full py-4 bg-white hover:bg-slate-100 text-slate-950 font-bold tracking-wider rounded-full shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-950"
-                >
-                  On Amazon
-                </a>
-              </div>
+            <!-- Closing Section CTA Block -->
+            <div class="mt-16 sm:mt-20 text-center max-w-2xl mx-auto p-8 sm:p-10 rounded-3xl bg-navy-dark/95 border border-white/12 shadow-2xl relative overflow-hidden">
+              <div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+              <span class="font-oswald text-xs font-bold tracking-[0.2em] text-primary uppercase mb-2 block">READY TO ENTER THE STORY?</span>
+              <h3 class="font-oswald text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide mb-3">
+                Explore The Encounter Trilogy
+              </h3>
+              <p class="font-garamond italic text-lg sm:text-xl text-slate-300 mb-6 font-normal">
+                Discover where each encounter begins and follow Greg, Carry, and Veronica's journey.
+              </p>
+              <a
+                href="#books-section"
+                class="inline-block px-8 py-3.5 bg-primary hover:bg-primary-hover text-white font-oswald text-xs font-medium tracking-widest uppercase rounded transition-all duration-300 shadow-lg hover:shadow-primary/20 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-navy"
+              >
+                EXPLORE THE TRILOGY &rarr;
+              </a>
             </div>
 
           </div>
@@ -846,102 +1228,133 @@
 
       </main>
 
-      <!-- FOOTER & QUICK CONTACT -->
-      <footer class="bg-slate-950 text-slate-400 pt-24 pb-12 border-t border-slate-900 relative" id="contact-section">
-        <div class="max-w-7xl mx-auto px-6">
-          
-          <!-- SOCIAL LINKS -->
-          <div class="flex flex-wrap items-center justify-center gap-6 pb-12 mb-16 border-b border-slate-900">
-            <!-- YouTube -->
-            <a href="https://www.youtube.com/@EncounterSeries-t9p" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-900 hover:bg-[#FF0000] text-slate-400 hover:text-white rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950" aria-label="Visit YouTube page">
-              <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-              </svg>
-            </a>
-            <!-- TikTok -->
-            <a href="https://www.tiktok.com/@georgecook3128" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-900 hover:bg-black text-slate-400 hover:text-white rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950" aria-label="Visit TikTok page">
-              <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.85.96 1.95 1.7 3.19 2.13.01 1.41.01 2.82 0 4.23-.97-.08-1.92-.38-2.77-.87a8.2 8.2 0 0 1-2.31-2.07c0 1.99-.02 3.98-.01 5.97.02 1.63-.33 3.29-1.12 4.74A9.22 9.22 0 0 1 9.7 23.63c-1.94.51-4.04.28-5.84-.66A9.09 9.09 0 0 1 .8 17.65c-.75-1.92-.72-4.09.11-5.99.76-1.89 2.22-3.48 4.09-4.32a9.12 9.12 0 0 1 8.26.15V11.8c-.89-.48-1.9-.71-2.91-.65a4.77 4.77 0 0 0-3.32 1.83 4.79 4.79 0 0 0-.84 4.54c.48 1.42 1.67 2.53 3.11 2.85 1.34.28 2.78-.05 3.84-.9a4.84 4.84 0 0 0 1.77-3.95V.02h-.37z"/>
-              </svg>
-            </a>
-            <!-- X -->
-            <a href="https://x.com/GeorgeCook68" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950" aria-label="Visit X Twitter page">
-              <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/people/Encounter-Series/61589023971605/" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-900 hover:bg-[#1877F2] text-slate-400 hover:text-white rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950" aria-label="Visit Facebook page">
-              <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/encounter_series/" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-900 hover:bg-[#E1306C] text-slate-400 hover:text-white rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950" aria-label="Visit Instagram page">
-              <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-              </svg>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/george-cook-8a61523a0/" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-900 hover:bg-[#0A66C2] text-slate-400 hover:text-white rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950" aria-label="Visit LinkedIn profile">
-              <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-            <!-- Pinterest -->
-            <a href="https://www.pinterest.com/writergcook68/?invite_code=77f9c185ba71433f9a84a20b5b975475&sender=914371668003322782" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-900 hover:bg-[#BD081C] text-slate-400 hover:text-white rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950" aria-label="Visit Pinterest page">
-              <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.168 1.777 2.168 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.218-.172.263-.398.156-1.484-.693-2.409-2.868-2.409-4.614 0-3.763 2.735-7.22 7.892-7.22 4.144 0 7.365 2.955 7.365 6.9 0 4.117-2.595 7.43-6.2 7.43-1.21 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.445-1.585 3.298C8.822 23.633 10.37 24 12.017 24c6.623 0 12-5.377 12-12s-5.377-12-12-12z"/>
-              </svg>
-            </a>
-            <!-- Blogger -->
-            <a href="https://www.blogger.com/u/1/blog/posts/4732504558335075187" target="_blank" rel="noopener noreferrer" class="py-2.5 px-4 bg-slate-900 hover:bg-[#F57C00] text-slate-400 hover:text-white rounded-full transition-all duration-300 font-oswald text-sm font-bold uppercase tracking-wider flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-950" aria-label="Visit Blogger blog">
-              <span>Blog</span>
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                <path d="M19.78 5.1c-1.35-1.35-3.15-2.1-5.1-2.1H5.1c-3.9 0-7.05 3.15-7.05 7.05v6.9c0 3.9 3.15 7.05 7.05 7.05h9.58c3.9 0 7.05-3.15 7.05-7.05V10.2c0-1.95-.75-3.75-2.1-5.1zM10.8 17.1c0 .99-.81 1.8-1.8 1.8H7.2c-.99 0-1.8-.81-1.8-1.8v-1.8c0-.99.81-1.8 1.8-1.8h1.8c.99 0 1.8.81 1.8 1.8v1.8zm6-6c0 .99-.81 1.8-1.8 1.8H7.2C6.21 12.9 5.4 12.09 5.4 11.1v-1.8c0-.99.81-1.8 1.8-1.8h7.8c.99 0 1.8.81 1.8 1.8v1.8zm0 6c0 .99-.81 1.8-1.8 1.8h-1.8c-.99 0-1.8-.81-1.8-1.8v-1.8c0-.99.81-1.8 1.8-1.8h1.8c.99 0 1.8.81 1.8 1.8v1.8z"/>
-              </svg>
-            </a>
-          </div>
+      <!-- FOOTER & QUICK CONTACT (Transition: Audio -> Contact) -->
+      <footer class="bg-midnight text-slate-400 pt-16 sm:pt-20 pb-12 border-t border-white/10 relative overflow-hidden" id="contact-section" aria-label="Site footer">
+        
+        <!-- Subtle Ambient Background Radial Glow -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-30 pointer-events-none"></div>
 
-          <!-- FOOTER CONTENT -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
-            <!-- About section in footer -->
-            <div class="lg:col-span-5 flex flex-col items-start">
-              <h3 class="font-oswald text-lg font-bold tracking-wider text-white uppercase mb-6">About the Author</h3>
-              <p class="text-slate-400 font-light leading-relaxed text-sm mb-4">
-                Official website for <strong>GHCOOKwriter</strong> and The Encounter Trilogy.
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          
+          <!-- TOP ROW: BRAND IDENTITY + BOOK-ON-DESK STILL-LIFE ARTWORK + LITERARY MOMENT -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center pb-16 mb-16 border-b border-white/10">
+            
+            <!-- Brand Identity -->
+            <div class="lg:col-span-7 flex flex-col items-start">
+              <span class="font-oswald text-xs font-bold tracking-[0.25em] text-primary uppercase mb-2 block">OFFICIAL AUTHOR WEBSITE</span>
+              <h2 class="font-oswald text-3xl sm:text-4xl font-bold tracking-wide uppercase text-white mb-2">
+                GHCOOKwriter
+              </h2>
+              <p class="font-garamond italic text-xl sm:text-2xl text-slate-300 mb-4 font-normal">
+                George H. Cook &bull; Author of The Encounter Trilogy
               </p>
-              <p class="text-slate-500 font-light leading-relaxed text-xs">
-                AW Smith | Web Developer Specializing in clean design and functional <BR>code using <span class="whitespace-nowrap">HTML4 &amp; 5</span>, CSS, JavaScript and Bootstrap5 CSS,<BR>Tailwind4 CSS &amp; WordPress CMS.View my other Projects: 
-                <a
-                  href="https://smithaw.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-indigo-400 hover:text-primary transition-colors focus:underline"
-                  >smithaw.com</a
-                >
+              <p class="font-roboto text-slate-400 text-sm font-light leading-relaxed max-w-xl mb-6">
+                Step inside a powerful trilogy of fate, ambition, and redemption in Kansas City. Follow Greg, Carry, and Veronica through high-stakes encounters, secrets, and life-changing choices.
               </p>
+              
+              <!-- Literary Pull Moment -->
+              <div class="flex items-center gap-3 py-2 px-4 rounded-xl bg-white/5 border border-white/10">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span class="font-garamond italic text-lg text-slate-200 tracking-wide">
+                  The Story Continues.
+                </span>
+              </div>
             </div>
 
-            <!-- Navigation Column -->
-            <div class="lg:col-span-3 lg:col-start-7 flex flex-col items-start">
-              <h3 class="font-oswald text-lg font-bold tracking-wider text-white uppercase mb-6">Navigation</h3>
-              <ul class="space-y-3 text-sm font-light">
-                <li><a href="#home-section" class="hover:text-primary transition-colors focus:underline">Home</a></li>
-                <li><a href="#about-section" class="hover:text-primary transition-colors focus:underline">About Author</a></li>
-                <li><a href="#testimonial-section" class="hover:text-primary transition-colors focus:underline">Testimonials</a></li>
+            <!-- Book-on-the-Table Still Life Artwork -->
+            <div class="lg:col-span-5 flex flex-col items-center justify-center text-center">
+              <div class="relative group/book">
+                <div class="absolute -inset-3 bg-gradient-to-r from-primary/20 to-indigo-500/20 rounded-2xl blur-xl opacity-50 group-hover/book:opacity-75 transition duration-500"></div>
+                <img
+                  src="assets/images/book_desktop.webp"
+                  alt="The Encounter Trilogy books resting on a wooden writing desk"
+                  class="relative max-h-64 sm:max-h-72 lg:max-h-80 w-auto object-contain rounded-xl book-shadow border border-white/10 transition-transform duration-500 group-hover/book:scale-[1.02]"
+                  loading="lazy"
+                  width="440"
+                  height="293"
+                />
+              </div>
+              <span class="font-garamond italic text-sm text-slate-300 mt-3 text-center">
+                "The book is waiting for the reader."
+              </span>
+            </div>
+
+          </div>
+
+          <!-- MIDDLE ROW: NAVIGATION + QUICK CONTACT FORM -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+            
+            <!-- Column 1: Site Navigation -->
+            <div class="lg:col-span-4 flex flex-col items-start">
+              <h3 class="font-oswald text-base font-bold tracking-wider text-white uppercase mb-6 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                The Encounter Trilogy
+              </h3>
+              <ul class="space-y-3 font-roboto text-sm font-light">
+                <li>
+                  <a href="#home-section" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2 group">
+                    <span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity text-xs">&rarr;</span>
+                    <span>Home &bull; Overview</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#books-section" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2 group">
+                    <span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity text-xs">&rarr;</span>
+                    <span>The Encounter Trilogy</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#excerpts-section" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2 group">
+                    <span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity text-xs">&rarr;</span>
+                    <span>Inside The Story</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#characters-section" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2 group">
+                    <span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity text-xs">&rarr;</span>
+                    <span>Meet The Ensemble</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#about-section" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2 group">
+                    <span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity text-xs">&rarr;</span>
+                    <span>About George H. Cook</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#testimonial-section" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2 group">
+                    <span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity text-xs">&rarr;</span>
+                    <span>Reader Reviews</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#audio-section" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2 group">
+                    <span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity text-xs">&rarr;</span>
+                    <span>Hear The Story</span>
+                  </a>
+                </li>
               </ul>
             </div>
 
-            <!-- Quick Contact Column -->
-            <div class="lg:col-span-3 flex flex-col items-start w-full">
-              <h3 class="font-oswald text-lg font-bold tracking-wider text-white uppercase mb-4">Quick Contact</h3>
-              <a href="mailto:info@ghcookwriter.com" class="text-primary font-bold text-sm tracking-wide mb-6 inline-block hover:underline">info@ghcookwriter.com</a>
+            <!-- Column 2: Quick Contact Form & Direct Email -->
+            <div class="lg:col-span-8 flex flex-col items-start w-full bg-navy-dark/80 p-6 sm:p-8 rounded-2xl border border-white/10 shadow-xl">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between w-full mb-6 gap-2">
+                <div>
+                  <h3 class="font-oswald text-lg font-bold tracking-wider text-white uppercase">Direct Contact &amp; Inquiries</h3>
+                  <p class="font-garamond italic text-sm text-slate-300">Reach out to author George H. Cook or media requests</p>
+                </div>
+                <a href="mailto:info@ghcookwriter.com" class="text-primary font-oswald text-xs font-bold tracking-wider uppercase hover:underline flex items-center gap-1.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  info@ghcookwriter.com
+                </a>
+              </div>
 
               <form
                 action="contact.php"
                 method="POST"
-                class="flex flex-col gap-4 w-full"
+                class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"
                 id="quickContactForm"
                 onsubmit="handleFormSubmit(event)"
               >
@@ -953,59 +1366,98 @@
 
                 <!-- Name -->
                 <div class="flex flex-col gap-1 w-full text-xs">
-                  <label for="name" class="text-slate-400 font-medium uppercase tracking-wider">Name</label>
+                  <label for="name" class="font-oswald text-[11px] text-slate-300 font-medium uppercase tracking-wider">Your Name</label>
                   <input 
                     type="text" 
                     id="name" 
                     name="name" 
                     required 
-                    class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-white text-sm"
+                    placeholder="Jane Doe"
+                    class="w-full px-4 py-2.5 rounded-lg bg-slate-900/90 border border-white/10 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-white text-sm placeholder:text-slate-500 transition-colors"
                   />
                 </div>
 
                 <!-- Email -->
                 <div class="flex flex-col gap-1 w-full text-xs">
-                  <label for="email" class="text-slate-400 font-medium uppercase tracking-wider">Email</label>
+                  <label for="email" class="font-oswald text-[11px] text-slate-300 font-medium uppercase tracking-wider">Email Address</label>
                   <input 
                     type="email" 
                     id="email" 
                     name="email" 
                     required 
-                    class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-white text-sm"
+                    placeholder="jane@example.com"
+                    class="w-full px-4 py-2.5 rounded-lg bg-slate-900/90 border border-white/10 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-white text-sm placeholder:text-slate-500 transition-colors"
                   />
                 </div>
 
                 <!-- Message -->
-                <div class="flex flex-col gap-1 w-full text-xs">
-                  <label for="message" class="text-slate-400 font-medium uppercase tracking-wider">Message</label>
+                <div class="flex flex-col gap-1 w-full text-xs sm:col-span-2">
+                  <label for="message" class="font-oswald text-[11px] text-slate-300 font-medium uppercase tracking-wider">Message</label>
                   <textarea
                     id="message"
                     name="message"
-                    rows="4"
+                    rows="3"
                     required
-                    class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-white text-sm resize-none"
+                    placeholder="Share your thoughts about the books or ask a question..."
+                    class="w-full px-4 py-2.5 rounded-lg bg-slate-900/90 border border-white/10 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-white text-sm placeholder:text-slate-500 transition-colors resize-none"
                   ></textarea>
                 </div>
 
                 <!-- Submit button -->
-                <button 
-                  type="submit"
-                  class="w-full py-3 bg-primary hover:bg-primary-hover text-white font-bold tracking-wider rounded-lg shadow-md transition-all duration-300 hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-primary"
-                >
-                  Send Message
-                </button>
+                <div class="sm:col-span-2 pt-1">
+                  <button 
+                    type="submit"
+                    class="w-full sm:w-auto px-8 py-3 bg-primary hover:bg-primary-hover text-white font-oswald text-xs font-bold tracking-widest uppercase rounded-lg shadow-md transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-navy"
+                  >
+                    Send Message &rarr;
+                  </button>
+                </div>
               </form>
             </div>
+
           </div>
 
-          <!-- COPYRIGHT -->
-          <div class="pt-8 mt-8 border-t border-slate-900 text-center text-xs text-slate-600">
+          <!-- SOCIAL MEDIA LINKS BAR -->
+          <div class="flex flex-wrap items-center justify-center gap-4 py-8 border-y border-white/10 mb-8">
+            <span class="font-oswald text-xs font-bold tracking-widest text-slate-400 uppercase mr-2 w-full sm:w-auto text-center">Connect With The Author:</span>
+            
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@EncounterSeries-t9p" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-white/5 hover:bg-[#FF0000] text-slate-300 hover:text-white rounded-full border border-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-midnight" aria-label="Visit YouTube channel">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@georgecook3128" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-white/5 hover:bg-black text-slate-300 hover:text-white rounded-full border border-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-midnight" aria-label="Visit TikTok profile">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.85.96 1.95 1.7 3.19 2.13.01 1.41.01 2.82 0 4.23-.97-.08-1.92-.38-2.77-.87a8.2 8.2 0 0 1-2.31-2.07c0 1.99-.02 3.98-.01 5.97.02 1.63-.33 3.29-1.12 4.74A9.22 9.22 0 0 1 9.7 23.63c-1.94.51-4.04.28-5.84-.66A9.09 9.09 0 0 1 .8 17.65c-.75-1.92-.72-4.09.11-5.99.76-1.89 2.22-3.48 4.09-4.32a9.12 9.12 0 0 1 8.26.15V11.8c-.89-.48-1.9-.71-2.91-.65a4.77 4.77 0 0 0-3.32 1.83 4.79 4.79 0 0 0-.84 4.54c.48 1.42 1.67 2.53 3.11 2.85 1.34.28 2.78-.05 3.84-.9a4.84 4.84 0 0 0 1.77-3.95V.02h-.37z"/></svg>
+            </a>
+            <!-- X / Twitter -->
+            <a href="https://x.com/GeorgeCook68" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-white/5 hover:bg-slate-800 text-slate-300 hover:text-white rounded-full border border-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-midnight" aria-label="Visit X profile">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/people/Encounter-Series/61589023971605/" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-white/5 hover:bg-[#1877F2] text-slate-300 hover:text-white rounded-full border border-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-midnight" aria-label="Visit Facebook page">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/encounter_series/" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-white/5 hover:bg-[#E1306C] text-slate-300 hover:text-white rounded-full border border-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-midnight" aria-label="Visit Instagram page">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/george-cook-8a61523a0/" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-white/5 hover:bg-[#0A66C2] text-slate-300 hover:text-white rounded-full border border-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-midnight" aria-label="Visit LinkedIn profile">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <!-- Pinterest -->
+            <a href="https://www.pinterest.com/writergcook68/?invite_code=77f9c185ba71433f9a84a20b5b975475&sender=914371668003322782" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-white/5 hover:bg-[#BD081C] text-slate-300 hover:text-white rounded-full border border-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-midnight" aria-label="Visit Pinterest page">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.168 1.777 2.168 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.218-.172.263-.398.156-1.484-.693-2.409-2.868-2.409-4.614 0-3.763 2.735-7.22 7.892-7.22 4.144 0 7.365 2.955 7.365 6.9 0 4.117-2.595 7.43-6.2 7.43-1.21 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.445-1.585 3.298C8.822 23.633 10.37 24 12.017 24c6.623 0 12-5.377 12-12s-5.377-12-12-12z"/></svg>
+            </a>
+          </div>
+
+          <!-- BOTTOM COPYRIGHT & CREDITS -->
+          <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4 pt-4 font-light">
             <p>
-              Copyright &copy;
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              All rights reserved           
+              Copyright &copy; <script>document.write(new Date().getFullYear());</script> <strong>GHCOOKwriter</strong> &bull; George H. Cook. All rights reserved.
+            </p>
+            <p class="text-slate-400">
+              Web Development by <a href="https://smithaw.com" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-primary transition-colors font-normal underline decoration-indigo-400/40 underline-offset-2">AW Smith</a>
             </p>
           </div>
 
@@ -1017,13 +1469,13 @@
     <!-- BACK TO TOP BUTTON -->
     <button
       id="backToTopBtn"
-      class="fixed bottom-6 right-6 p-4 bg-primary hover:bg-primary-hover text-white rounded-full shadow-lg hover:shadow-primary/20 hover:scale-105 transition-all duration-300 opacity-0 invisible translate-y-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary z-30"
+      class="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 w-11 h-11 sm:w-12 sm:h-12 bg-primary hover:bg-primary-hover text-white rounded-full shadow-lg hover:shadow-primary/25 hover:scale-105 active:scale-95 transition-all duration-300 ease-out opacity-0 invisible translate-y-3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-paper focus:ring-primary z-40 flex items-center justify-center"
       type="button"
       aria-label="Back to top"
       title="Back to top"
     >
-      <!-- Arrow Up SVG -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+      <!-- Arrow Up SVG Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
         <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
       </svg>
     </button>
